@@ -7,10 +7,10 @@
                 <div class="col-md-12">
                     <div class="d-md-flex align-items-center mb-3 mx-2">
                         <div class="mb-md-0 mb-3">
-                            <h3 class="font-weight-bold mb-0">Hello, Noah</h3>
+                            <h3 class="font-weight-bold mb-0">Hello, {{($nama->name)}}</h3>
                             <p class="mb-0">Apps you might like!</p>
                         </div>
-                        <button type="button"
+                        {{-- <button type="button"
                             class="btn btn-sm btn-white btn-icon d-flex align-items-center mb-0 ms-md-auto mb-sm-0 mb-2 me-2">
                             <span class="btn-inner--icon">
                                 <span class="p-1 bg-success rounded-circle d-flex ms-auto me-2">
@@ -28,177 +28,86 @@
                                 </svg>
                             </span>
                             <span class="btn-inner--text">Sync</span>
-                        </button>
+                        </button> --}}
                     </div>
                 </div>
             </div>
             <hr class="my-0">
-            <div class="row">
-                <div class="position-relative overflow-hidden">
-                    <div class="swiper mySwiper mt-4 mb-2">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div>
-                                    <div
-                                        class="card card-background shadow-none border-radius-xl card-background-after-none align-items-start mb-0">
-                                        <div class="full-background bg-cover"
-                                            style="background-image: url('../assets/img/img-2.jpg')"></div>
-                                        <div class="card-body text-start px-3 py-0 w-100">
-                                            <div class="row mt-12">
-                                                <div class="col-sm-3 mt-auto">
-                                                    <h4 class="text-dark font-weight-bolder">#1</h4>
-                                                    <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Name
-                                                    </p>
-                                                    <h5 class="text-dark font-weight-bolder">Secured</h5>
-                                                </div>
-                                                <div class="col-sm-3 ms-auto mt-auto">
-                                                    <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">
-                                                        Category</p>
-                                                    <h5 class="text-dark font-weight-bolder">Banking</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="card card-background shadow-none border-radius-xl card-background-after-none align-items-start mb-0">
-                                    <div class="full-background bg-cover"
-                                        style="background-image: url('../assets/img/img-1.jpg')"></div>
-                                    <div class="card-body text-start px-3 py-0 w-100">
-                                        <div class="row mt-12">
-                                            <div class="col-sm-3 mt-auto">
-                                                <h4 class="text-dark font-weight-bolder">#2</h4>
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Name</p>
-                                                <h5 class="text-dark font-weight-bolder">Cyber</h5>
-                                            </div>
-                                            <div class="col-sm-3 ms-auto mt-auto">
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Category
-                                                </p>
-                                                <h5 class="text-dark font-weight-bolder">Security</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="card card-background shadow-none border-radius-xl card-background-after-none align-items-start mb-0">
-                                    <div class="full-background bg-cover"
-                                        style="background-image: url('../assets/img/img-3.jpg')"></div>
-                                    <div class="card-body text-start px-3 py-0 w-100">
-                                        <div class="row mt-12">
-                                            <div class="col-sm-3 mt-auto">
-                                                <h4 class="text-dark font-weight-bolder">#3</h4>
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Name</p>
-                                                <h5 class="text-dark font-weight-bolder">Alpha</h5>
-                                            </div>
-                                            <div class="col-sm-3 ms-auto mt-auto">
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Category
-                                                </p>
-                                                <h5 class="text-dark font-weight-bolder">Blockchain</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="card card-background shadow-none border-radius-xl card-background-after-none align-items-start mb-0">
-                                    <div class="full-background bg-cover"
-                                        style="background-image: url('../assets/img/img-4.jpg')"></div>
-                                    <div class="card-body text-start px-3 py-0 w-100">
-                                        <div class="row mt-12">
-                                            <div class="col-sm-3 mt-auto">
-                                                <h4 class="text-dark font-weight-bolder">#4</h4>
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Name</p>
-                                                <h5 class="text-dark font-weight-bolder">Beta</h5>
-                                            </div>
-                                            <div class="col-sm-3 ms-auto mt-auto">
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Category
-                                                </p>
-                                                <h5 class="text-dark font-weight-bolder">Web3</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="card card-background shadow-none border-radius-xl card-background-after-none align-items-start mb-0">
-                                    <div class="full-background bg-cover"
-                                        style="background-image: url('../assets/img/img-5.jpg')"></div>
-                                    <div class="card-body text-start px-3 py-0 w-100">
-                                        <div class="row mt-12">
-                                            <div class="col-sm-3 mt-auto">
-                                                <h4 class="text-dark font-weight-bolder">#5</h4>
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Name</p>
-                                                <h5 class="text-dark font-weight-bolder">Gama</h5>
-                                            </div>
-                                            <div class="col-sm-3 ms-auto mt-auto">
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Category
-                                                </p>
-                                                <h5 class="text-dark font-weight-bolder">Design</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="card card-background shadow-none border-radius-xl card-background-after-none align-items-start mb-0">
-                                    <div class="full-background bg-cover"
-                                        style="background-image: url('../assets/img/img-1.jpg')"></div>
-                                    <div class="card-body text-start px-3 py-0 w-100">
-                                        <div class="row mt-12">
-                                            <div class="col-sm-3 mt-auto">
-                                                <h4 class="text-dark font-weight-bolder">#6</h4>
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Name</p>
-                                                <h5 class="text-dark font-weight-bolder">Rompro</h5>
-                                            </div>
-                                            <div class="col-sm-3 ms-auto mt-auto">
-                                                <p class="text-dark opacity-6 text-xs font-weight-bolder mb-0">Category
-                                                </p>
-                                                <h5 class="text-dark font-weight-bolder">Security</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="card card-background card-background-after-none align-items-start mt-4 mb-5">
+                <div class="full-background"
+                    style="background-image: url('../assets/img/header-blue-purple.jpg')"></div>
+                <div class="card-body text-start p-4 w-100">
+                    <div class="row">
+                        <div class="col-sm-3 col-6 pb-1">
+                            <a href="" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
+                                <span class="btn-inner--icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
+                                        <defs>
+                                        </defs>
+                                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                                            <path d="M 85.347 90 c 0 -22.283 -18.064 -40.347 -40.347 -40.347 S 4.653 67.717 4.653 90 H 85.347 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                            <circle cx="45.003" cy="21.413" r="21.413" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+                                        </g>
+                                        </svg>
+                                </span>
+                                <span class="btn-inner--text">Profile</span>
+                            </a>
+                        </div>
+                        <div class="col-sm-3 col-6 pb-1">
+                            <a href="" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
+                                <span class="btn-inner--icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
+
+                                        <defs>
+                                        </defs>
+                                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                                            <path d="M 90 23.452 v -3.892 c 0 -6.074 -4.942 -11.016 -11.017 -11.016 H 68.522 V 4.284 c 0 -1.657 -1.343 -3 -3 -3 s -3 1.343 -3 3 v 4.261 H 27.477 V 4.284 c 0 -1.657 -1.343 -3 -3 -3 s -3 1.343 -3 3 v 4.261 H 11.016 C 4.942 8.545 0 13.487 0 19.561 v 3.892 H 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                            <path d="M 0 29.452 V 75.7 c 0 6.074 4.942 11.016 11.016 11.016 h 67.967 C 85.058 86.716 90 81.775 90 75.7 V 29.452 H 0 z M 25.779 72.18 h -7.376 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 7.376 c 1.657 0 3 1.343 3 3 S 27.436 72.18 25.779 72.18 z M 25.779 58.816 h -7.376 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 7.376 c 1.657 0 3 1.343 3 3 S 27.436 58.816 25.779 58.816 z M 25.779 45.452 h -7.376 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 7.376 c 1.657 0 3 1.343 3 3 S 27.436 45.452 25.779 45.452 z M 48.688 72.18 h -7.375 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 7.375 c 1.657 0 3 1.343 3 3 S 50.345 72.18 48.688 72.18 z M 48.688 58.816 h -7.375 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 7.375 c 1.657 0 3 1.343 3 3 S 50.345 58.816 48.688 58.816 z M 48.688 45.452 h -7.375 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 7.375 c 1.657 0 3 1.343 3 3 S 50.345 45.452 48.688 45.452 z M 71.597 72.18 h -7.376 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 7.376 c 1.657 0 3 1.343 3 3 S 73.254 72.18 71.597 72.18 z M 71.597 58.816 h -7.376 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 7.376 c 1.657 0 3 1.343 3 3 S 73.254 58.816 71.597 58.816 z M 71.597 45.452 h -7.376 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 7.376 c 1.657 0 3 1.343 3 3 S 73.254 45.452 71.597 45.452 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="btn-inner--text">Tanggal</span>
+                            </a>
+                        </div>
+                        <div class="col-sm-3 col-3 pb-1">
+                            <a href="" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
+                                <span class="btn-inner--icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
+                                        <defs>
+                                        </defs>
+                                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                                            <path d="M 54.572 90 H 9.758 C 4.377 90 0 85.623 0 80.242 V 9.758 C 0 4.377 4.377 0 9.758 0 h 70.484 C 85.623 0 90 4.377 90 9.758 v 46.829 c 0 1.657 -1.343 3 -3 3 s -3 -1.343 -3 -3 V 9.758 C 84 7.686 82.314 6 80.242 6 H 9.758 C 7.686 6 6 7.686 6 9.758 v 70.484 C 6 82.314 7.686 84 9.758 84 h 44.814 c 1.657 0 3 1.343 3 3 S 56.229 90 54.572 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                            <path d="M 71.459 25.091 H 18.541 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 52.918 c 1.657 0 3 1.343 3 3 S 73.116 25.091 71.459 25.091 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                            <path d="M 71.459 40.364 H 18.541 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 52.918 c 1.657 0 3 1.343 3 3 S 73.116 40.364 71.459 40.364 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                            <path d="M 33.277 55.637 H 18.541 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 14.736 c 1.657 0 3 1.343 3 3 S 34.934 55.637 33.277 55.637 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                            <path d="M 42.823 70.909 H 18.541 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 24.282 c 1.657 0 3 1.343 3 3 S 44.479 70.909 42.823 70.909 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                            <path d="M 87.748 72.927 L 68.666 53.845 c -1.408 -1.408 -3.158 -2.46 -5.063 -3.042 l -10.006 -3.057 c -1.662 -0.513 -3.457 -0.062 -4.685 1.167 c -1.229 1.229 -1.676 3.023 -1.168 4.684 l 3.058 10.007 c 0.582 1.904 1.634 3.654 3.042 5.063 l 19.082 19.082 C 74.427 89.25 76.4 90 78.372 90 c 1.973 0 3.945 -0.75 5.446 -2.252 l 3.93 -3.93 C 90.751 80.815 90.751 75.93 87.748 72.927 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                        </g>
+                                    </svg>
+                                </span>
+                                <span class="btn-inner--text">Input Data</span>
+                            </a>
+                        </div>
+                        <div class="col-sm-3 col-3 pb-1">
+                            <a href="" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
+                                <span class="btn-inner--icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
+                                        <defs>
+                                        </defs>
+                                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                                            <path d="M 85.347 90 c 0 -22.283 -18.064 -40.347 -40.347 -40.347 S 4.653 67.717 4.653 90 H 85.347 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                            <circle cx="45.003" cy="21.413" r="21.413" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 255, 255); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+                                        </g>
+                                        </svg>
+                                </span>
+                                <span class="btn-inner--text">Kirim Wasis</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
             </div>
             <div class="row my-4">
-                <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
-                    <div class="card shadow-xs border h-100">
-                        <div class="card-header pb-0">
-                            <h6 class="font-weight-semibold text-lg mb-0">Balances over time</h6>
-                            <p class="text-sm">Here you have details about the balance.</p>
-                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
-                                    autocomplete="off" checked>
-                                <label class="btn btn-white px-3 mb-0" for="btnradio1">12 months</label>
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2"
-                                    autocomplete="off">
-                                <label class="btn btn-white px-3 mb-0" for="btnradio2">30 days</label>
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio3"
-                                    autocomplete="off">
-                                <label class="btn btn-white px-3 mb-0" for="btnradio3">7 days</label>
-                            </div>
-                        </div>
-                        <div class="card-body py-3">
-                            <div class="chart mb-2">
-                                <canvas id="chart-bars" class="chart-canvas" height="240"></canvas>
-                            </div>
-                            <button class="btn btn-white mb-0 ms-auto">View report</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-6">
+                <div class="col-lg-12 col-md-8 col-sm-6">
                     <div class="card shadow-xs border">
                         <div class="card-header border-bottom pb-0">
                             <div class="d-sm-flex align-items-center mb-3">
@@ -206,241 +115,32 @@
                                     <h6 class="font-weight-semibold text-lg mb-0">Recent transactions</h6>
                                     <p class="text-sm mb-sm-0 mb-2">These are details about the last transactions</p>
                                 </div>
-                                <div class="ms-auto d-flex">
-                                    <button type="button" class="btn btn-sm btn-white mb-0 me-2">
-                                        View report
-                                    </button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-dark btn-icon d-flex align-items-center mb-0">
-                                        <span class="btn-inner--icon">
-                                            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                stroke="currentColor" class="d-block me-2">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                            </svg>
-                                        </span>
-                                        <span class="btn-inner--text">Download</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="pb-3 d-sm-flex align-items-center">
-                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                    <input type="radio" class="btn-check" name="btnradiotable" id="btnradiotable1"
-                                        autocomplete="off" checked>
-                                    <label class="btn btn-white px-3 mb-0" for="btnradiotable1">All</label>
-                                    <input type="radio" class="btn-check" name="btnradiotable" id="btnradiotable2"
-                                        autocomplete="off">
-                                    <label class="btn btn-white px-3 mb-0" for="btnradiotable2">Monitored</label>
-                                    <input type="radio" class="btn-check" name="btnradiotable" id="btnradiotable3"
-                                        autocomplete="off">
-                                    <label class="btn btn-white px-3 mb-0" for="btnradiotable3">Unmonitored</label>
-                                </div>
-                                <div class="input-group w-sm-25 ms-auto">
-                                    <span class="input-group-text text-body">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px"
-                                            fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                            stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Search">
-                                </div>
                             </div>
                         </div>
                         <div class="card-body px-0 py-0">
-                            <div class="table-responsive p-0">
-                                <table class="table align-items-center justify-content-center mb-0">
+                            <div class="table-responsive p-3">
+                                <table class="table datatable align-items-center justify-content-center mb-0" id="tableDashboard">
                                     <thead class="bg-gray-100">
                                         <tr>
-                                            <th class="text-secondary text-xs font-weight-semibold opacity-7">
-                                                Transaction</th>
-                                            <th class="text-secondary text-xs font-weight-semibold opacity-7 ps-2">
-                                                Amount</th>
-                                            <th class="text-secondary text-xs font-weight-semibold opacity-7 ps-2">Date
-                                            </th>
-                                            <th class="text-secondary text-xs font-weight-semibold opacity-7 ps-2">
-                                                Account</th>
-                                            <th
-                                                class="text-center text-secondary text-xs font-weight-semibold opacity-7">
-                                            </th>
+                                            <th class="text-primary text-xs font-weight-bold opacity-10">
+                                                No.</th>
+                                            <th class="text-info text-xs font-weight-bold opacity-10 ps-2">
+                                                Aksi</th>
+                                            <th class="text-success text-xs font-weight-bold opacity-10 ps-2">
+                                                NIK</th>
+                                            <th class="text-dark text-xs font-weight-bold opacity-10 ps-2">
+                                                Nama</th>
+                                            <th class="text-warning text-secondary text-xs font-weight-bold opacity-10">
+                                                Foto Lokasi</th>
+                                            <th class="text-center text-secondary text-xs font-weight-bold opacity-10">
+                                                Koordinat Lokasi</th>
+                                            <th class="text-center text-secondary text-xs font-weight-bold opacity-10">
+                                                Diambil Oleh</th>
+                                            <th class="text-center text-secondary text-xs font-weight-bold opacity-10">
+                                                Tanggal Foto Diambil</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div class="avatar avatar-sm rounded-circle bg-gray-100 me-2 my-2">
-                                                        <img src="../assets/img/small-logos/logo-spotify.svg"
-                                                            class="w-80" alt="spotify">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-sm">Spotify</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-sm font-weight-normal mb-0">$2,500</p>
-                                            </td>
-                                            <td>
-                                                <span class="text-sm font-weight-normal">Wed 3:00pm</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <div class="d-flex">
-                                                    <div
-                                                        class="border px-1 py-1 text-center d-flex align-items-center border-radius-sm my-auto">
-                                                        <img src="../assets/img/logos/visa.png" class="w-90 mx-auto"
-                                                            alt="visa">
-                                                    </div>
-                                                    <div class="ms-2">
-                                                        <p class="text-dark text-sm mb-0">Visa 1234</p>
-                                                        <p class="text-secondary text-sm mb-0">Expiry 06/2026</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                                    data-bs-toggle="tooltip" data-bs-title="Edit user">
-                                                    <svg width="14" height="14" viewBox="0 0 15 16"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M11.2201 2.02495C10.8292 1.63482 10.196 1.63545 9.80585 2.02636C9.41572 2.41727 9.41635 3.05044 9.80726 3.44057L11.2201 2.02495ZM12.5572 6.18502C12.9481 6.57516 13.5813 6.57453 13.9714 6.18362C14.3615 5.79271 14.3609 5.15954 13.97 4.7694L12.5572 6.18502ZM11.6803 1.56839L12.3867 2.2762L12.3867 2.27619L11.6803 1.56839ZM14.4302 4.31284L15.1367 5.02065L15.1367 5.02064L14.4302 4.31284ZM3.72198 15V16C3.98686 16 4.24091 15.8949 4.42839 15.7078L3.72198 15ZM0.999756 15H-0.000244141C-0.000244141 15.5523 0.447471 16 0.999756 16L0.999756 15ZM0.999756 12.2279L0.293346 11.5201C0.105383 11.7077 -0.000244141 11.9624 -0.000244141 12.2279H0.999756ZM9.80726 3.44057L12.5572 6.18502L13.97 4.7694L11.2201 2.02495L9.80726 3.44057ZM12.3867 2.27619C12.7557 1.90794 13.3549 1.90794 13.7238 2.27619L15.1367 0.860593C13.9869 -0.286864 12.1236 -0.286864 10.9739 0.860593L12.3867 2.27619ZM13.7238 2.27619C14.0917 2.64337 14.0917 3.23787 13.7238 3.60504L15.1367 5.02064C16.2875 3.8721 16.2875 2.00913 15.1367 0.860593L13.7238 2.27619ZM13.7238 3.60504L3.01557 14.2922L4.42839 15.7078L15.1367 5.02065L13.7238 3.60504ZM3.72198 14H0.999756V16H3.72198V14ZM1.99976 15V12.2279H-0.000244141V15H1.99976ZM1.70617 12.9357L12.3867 2.2762L10.9739 0.86059L0.293346 11.5201L1.70617 12.9357Z"
-                                                            fill="#64748B" />
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div class="avatar avatar-sm rounded-circle bg-gray-100 me-2 my-2">
-                                                        <img src="../assets/img/small-logos/logo-invision.svg"
-                                                            class="w-80" alt="invision">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-sm">Invision</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-sm font-weight-normal mb-0">$5,000</p>
-                                            </td>
-                                            <td>
-                                                <span class="text-sm font-weight-normal">Wed 1:00pm</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <div class="d-flex">
-                                                    <div
-                                                        class="border px-1 py-1 text-center d-flex align-items-center border-radius-sm my-auto">
-                                                        <img src="../assets/img/logos/mastercard.png"
-                                                            class="w-90 mx-auto" alt="mastercard">
-                                                    </div>
-                                                    <div class="ms-2">
-                                                        <p class="text-dark text-sm mb-0">Mastercard 1234</p>
-                                                        <p class="text-secondary text-sm mb-0">Expiry 06/2026</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                                    data-bs-toggle="tooltip" data-bs-title="Edit user">
-                                                    <svg width="14" height="14" viewBox="0 0 15 16"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M11.2201 2.02495C10.8292 1.63482 10.196 1.63545 9.80585 2.02636C9.41572 2.41727 9.41635 3.05044 9.80726 3.44057L11.2201 2.02495ZM12.5572 6.18502C12.9481 6.57516 13.5813 6.57453 13.9714 6.18362C14.3615 5.79271 14.3609 5.15954 13.97 4.7694L12.5572 6.18502ZM11.6803 1.56839L12.3867 2.2762L12.3867 2.27619L11.6803 1.56839ZM14.4302 4.31284L15.1367 5.02065L15.1367 5.02064L14.4302 4.31284ZM3.72198 15V16C3.98686 16 4.24091 15.8949 4.42839 15.7078L3.72198 15ZM0.999756 15H-0.000244141C-0.000244141 15.5523 0.447471 16 0.999756 16L0.999756 15ZM0.999756 12.2279L0.293346 11.5201C0.105383 11.7077 -0.000244141 11.9624 -0.000244141 12.2279H0.999756ZM9.80726 3.44057L12.5572 6.18502L13.97 4.7694L11.2201 2.02495L9.80726 3.44057ZM12.3867 2.27619C12.7557 1.90794 13.3549 1.90794 13.7238 2.27619L15.1367 0.860593C13.9869 -0.286864 12.1236 -0.286864 10.9739 0.860593L12.3867 2.27619ZM13.7238 2.27619C14.0917 2.64337 14.0917 3.23787 13.7238 3.60504L15.1367 5.02064C16.2875 3.8721 16.2875 2.00913 15.1367 0.860593L13.7238 2.27619ZM13.7238 3.60504L3.01557 14.2922L4.42839 15.7078L15.1367 5.02065L13.7238 3.60504ZM3.72198 14H0.999756V16H3.72198V14ZM1.99976 15V12.2279H-0.000244141V15H1.99976ZM1.70617 12.9357L12.3867 2.2762L10.9739 0.86059L0.293346 11.5201L1.70617 12.9357Z"
-                                                            fill="#64748B" />
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div class="avatar avatar-sm rounded-circle bg-gray-100 me-2 my-2">
-                                                        <img src="../assets/img/small-logos/logo-jira.svg"
-                                                            class="w-80" alt="jira">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-sm">Jira</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-sm font-weight-normal mb-0">$3,400</p>
-                                            </td>
-                                            <td>
-                                                <span class="text-sm font-weight-normal">Mon 7:40pm</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <div class="d-flex">
-                                                    <div
-                                                        class="border px-1 py-1 text-center d-flex align-items-center border-radius-sm my-auto">
-                                                        <img src="../assets/img/logos/mastercard.png"
-                                                            class="w-90 mx-auto" alt="mastercard">
-                                                    </div>
-                                                    <div class="ms-2">
-                                                        <p class="text-dark text-sm mb-0">Mastercard 1234</p>
-                                                        <p class="text-secondary text-sm mb-0">Expiry 06/2026</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                                    data-bs-toggle="tooltip" data-bs-title="Edit user">
-                                                    <svg width="14" height="14" viewBox="0 0 15 16"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M11.2201 2.02495C10.8292 1.63482 10.196 1.63545 9.80585 2.02636C9.41572 2.41727 9.41635 3.05044 9.80726 3.44057L11.2201 2.02495ZM12.5572 6.18502C12.9481 6.57516 13.5813 6.57453 13.9714 6.18362C14.3615 5.79271 14.3609 5.15954 13.97 4.7694L12.5572 6.18502ZM11.6803 1.56839L12.3867 2.2762L12.3867 2.27619L11.6803 1.56839ZM14.4302 4.31284L15.1367 5.02065L15.1367 5.02064L14.4302 4.31284ZM3.72198 15V16C3.98686 16 4.24091 15.8949 4.42839 15.7078L3.72198 15ZM0.999756 15H-0.000244141C-0.000244141 15.5523 0.447471 16 0.999756 16L0.999756 15ZM0.999756 12.2279L0.293346 11.5201C0.105383 11.7077 -0.000244141 11.9624 -0.000244141 12.2279H0.999756ZM9.80726 3.44057L12.5572 6.18502L13.97 4.7694L11.2201 2.02495L9.80726 3.44057ZM12.3867 2.27619C12.7557 1.90794 13.3549 1.90794 13.7238 2.27619L15.1367 0.860593C13.9869 -0.286864 12.1236 -0.286864 10.9739 0.860593L12.3867 2.27619ZM13.7238 2.27619C14.0917 2.64337 14.0917 3.23787 13.7238 3.60504L15.1367 5.02064C16.2875 3.8721 16.2875 2.00913 15.1367 0.860593L13.7238 2.27619ZM13.7238 3.60504L3.01557 14.2922L4.42839 15.7078L15.1367 5.02065L13.7238 3.60504ZM3.72198 14H0.999756V16H3.72198V14ZM1.99976 15V12.2279H-0.000244141V15H1.99976ZM1.70617 12.9357L12.3867 2.2762L10.9739 0.86059L0.293346 11.5201L1.70617 12.9357Z"
-                                                            fill="#64748B" />
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div class="avatar avatar-sm rounded-circle bg-gray-100 me-2 my-2">
-                                                        <img src="../assets/img/small-logos/logo-slack.svg"
-                                                            class="w-80" alt="slack">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-sm">Slack</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-sm font-weight-normal mb-0">$1,000</p>
-                                            </td>
-                                            <td>
-                                                <span class="text-sm font-weight-normal">Wed 5:00pm</span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <div class="d-flex">
-                                                    <div
-                                                        class="border px-1 py-1 text-center d-flex align-items-center border-radius-sm my-auto">
-                                                        <img src="../assets/img/logos/visa.png" class="w-90 mx-auto"
-                                                            alt="visa">
-                                                    </div>
-                                                    <div class="ms-2">
-                                                        <p class="text-dark text-sm mb-0">Visa 1234</p>
-                                                        <p class="text-secondary text-sm mb-0">Expiry 06/2026</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                                    data-bs-toggle="tooltip" data-bs-title="Edit user">
-                                                    <svg width="14" height="14" viewBox="0 0 15 16"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M11.2201 2.02495C10.8292 1.63482 10.196 1.63545 9.80585 2.02636C9.41572 2.41727 9.41635 3.05044 9.80726 3.44057L11.2201 2.02495ZM12.5572 6.18502C12.9481 6.57516 13.5813 6.57453 13.9714 6.18362C14.3615 5.79271 14.3609 5.15954 13.97 4.7694L12.5572 6.18502ZM11.6803 1.56839L12.3867 2.2762L12.3867 2.27619L11.6803 1.56839ZM14.4302 4.31284L15.1367 5.02065L15.1367 5.02064L14.4302 4.31284ZM3.72198 15V16C3.98686 16 4.24091 15.8949 4.42839 15.7078L3.72198 15ZM0.999756 15H-0.000244141C-0.000244141 15.5523 0.447471 16 0.999756 16L0.999756 15ZM0.999756 12.2279L0.293346 11.5201C0.105383 11.7077 -0.000244141 11.9624 -0.000244141 12.2279H0.999756ZM9.80726 3.44057L12.5572 6.18502L13.97 4.7694L11.2201 2.02495L9.80726 3.44057ZM12.3867 2.27619C12.7557 1.90794 13.3549 1.90794 13.7238 2.27619L15.1367 0.860593C13.9869 -0.286864 12.1236 -0.286864 10.9739 0.860593L12.3867 2.27619ZM13.7238 2.27619C14.0917 2.64337 14.0917 3.23787 13.7238 3.60504L15.1367 5.02064C16.2875 3.8721 16.2875 2.00913 15.1367 0.860593L13.7238 2.27619ZM13.7238 3.60504L3.01557 14.2922L4.42839 15.7078L15.1367 5.02065L13.7238 3.60504ZM3.72198 14H0.999756V16H3.72198V14ZM1.99976 15V12.2279H-0.000244141V15H1.99976ZM1.70617 12.9357L12.3867 2.2762L10.9739 0.86059L0.293346 11.5201L1.70617 12.9357Z"
-                                                            fill="#64748B" />
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -448,166 +148,134 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xl-3 col-sm-6 mb-xl-0">
-                    <div class="card border shadow-xs mb-4">
-                        <div class="card-body text-start p-3 w-100">
-                            <div
-                                class="icon icon-shape icon-sm bg-dark text-white text-center border-radius-sm d-flex align-items-center justify-content-center mb-3">
-                                <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M4.5 3.75a3 3 0 00-3 3v.75h21v-.75a3 3 0 00-3-3h-15z" />
-                                    <path fill-rule="evenodd"
-                                        d="M22.5 9.75h-21v7.5a3 3 0 003 3h15a3 3 0 003-3v-7.5zm-18 3.75a.75.75 0 01.75-.75h6a.75.75 0 010 1.5h-6a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="w-100">
-                                        <p class="text-sm text-secondary mb-1">Revenue</p>
-                                        <h4 class="mb-2 font-weight-bold">$99,118.5</h4>
-                                        <div class="d-flex align-items-center">
-                                            <span class="text-sm text-success font-weight-bolder">
-                                                <i class="fa fa-chevron-up text-xs me-1"></i>10.5%
-                                            </span>
-                                            <span class="text-sm ms-1">from $89,740.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0">
-                    <div class="card border shadow-xs mb-4">
-                        <div class="card-body text-start p-3 w-100">
-                            <div
-                                class="icon icon-shape icon-sm bg-dark text-white text-center border-radius-sm d-flex align-items-center justify-content-center mb-3">
-                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                                        clip-rule="evenodd" />
-                                    <path
-                                        d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z" />
-                                </svg>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="w-100">
-                                        <p class="text-sm text-secondary mb-1">Transactions</p>
-                                        <h4 class="mb-2 font-weight-bold">376</h4>
-                                        <div class="d-flex align-items-center">
-                                            <span class="text-sm text-success font-weight-bolder">
-                                                <i class="fa fa-chevron-up text-xs me-1"></i>55%
-                                            </span>
-                                            <span class="text-sm ms-1">from 243</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 mb-xl-0">
-                    <div class="card border shadow-xs mb-4">
-                        <div class="card-body text-start p-3 w-100">
-                            <div
-                                class="icon icon-shape icon-sm bg-dark text-white text-center border-radius-sm d-flex align-items-center justify-content-center mb-3">
-                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm4.5 7.5a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0v-2.25a.75.75 0 01.75-.75zm3.75-1.5a.75.75 0 00-1.5 0v4.5a.75.75 0 001.5 0V12zm2.25-3a.75.75 0 01.75.75v6.75a.75.75 0 01-1.5 0V9.75A.75.75 0 0113.5 9zm3.75-1.5a.75.75 0 00-1.5 0v9a.75.75 0 001.5 0v-9z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="w-100">
-                                        <p class="text-sm text-secondary mb-1">Avg. Transaction</p>
-                                        <h4 class="mb-2 font-weight-bold">$450.53</h4>
-                                        <div class="d-flex align-items-center">
-                                            <span class="text-sm text-success font-weight-bolder">
-                                                <i class="fa fa-chevron-up text-xs me-1"></i>22%
-                                            </span>
-                                            <span class="text-sm ms-1">from $369.30</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-6">
-                    <div class="card border shadow-xs mb-4">
-                        <div class="card-body text-start p-3 w-100">
-                            <div
-                                class="icon icon-shape icon-sm bg-dark text-white text-center border-radius-sm d-flex align-items-center justify-content-center mb-3">
-                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M5.25 2.25a3 3 0 00-3 3v4.318a3 3 0 00.879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 005.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 00-2.122-.879H5.25zM6.375 7.5a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="w-100">
-                                        <p class="text-sm text-secondary mb-1">Coupon Sales</p>
-                                        <h4 class="mb-2 font-weight-bold">$23,364.55</h4>
-                                        <div class="d-flex align-items-center">
-                                            <span class="text-sm text-success font-weight-bolder">
-                                                <i class="fa fa-chevron-up text-xs me-1"></i>18%
-                                            </span>
-                                            <span class="text-sm ms-1">from $19,800.40</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card shadow-xs border">
-                        <div class="card-header pb-0">
-                            <div class="d-sm-flex align-items-center mb-3">
-                                <div>
-                                    <h6 class="font-weight-semibold text-lg mb-0">Overview balance</h6>
-                                    <p class="text-sm mb-sm-0 mb-2">Here you have details about the balance.</p>
-                                </div>
-                                <div class="ms-auto d-flex">
-                                    <button type="button" class="btn btn-sm btn-white mb-0 me-2">
-                                        View report
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="d-sm-flex align-items-center">
-                                <h3 class="mb-0 font-weight-semibold">$87,982.80</h3>
-                                <span
-                                    class="badge badge-sm border border-success text-success bg-success border-radius-sm ms-sm-3 px-2">
-                                    <svg width="9" height="9" viewBox="0 0 10 9" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0.46967 4.46967C0.176777 4.76256 0.176777 5.23744 0.46967 5.53033C0.762563 5.82322 1.23744 5.82322 1.53033 5.53033L0.46967 4.46967ZM5.53033 1.53033C5.82322 1.23744 5.82322 0.762563 5.53033 0.46967C5.23744 0.176777 4.76256 0.176777 4.46967 0.46967L5.53033 1.53033ZM5.53033 0.46967C5.23744 0.176777 4.76256 0.176777 4.46967 0.46967C4.17678 0.762563 4.17678 1.23744 4.46967 1.53033L5.53033 0.46967ZM8.46967 5.53033C8.76256 5.82322 9.23744 5.82322 9.53033 5.53033C9.82322 5.23744 9.82322 4.76256 9.53033 4.46967L8.46967 5.53033ZM1.53033 5.53033L5.53033 1.53033L4.46967 0.46967L0.46967 4.46967L1.53033 5.53033ZM4.46967 1.53033L8.46967 5.53033L9.53033 4.46967L5.53033 0.46967L4.46967 1.53033Z"
-                                            fill="#67C23A"></path>
-                                    </svg>
-                                    10.5%
-                                </span>
-                            </div>
-                        </div>
-                        <div class="card-body p-3">
-                            <div class="chart mt-n6">
-                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <x-app.footer />
         </div>
+
+        <script>
+            $(document).ready(function(){
+                $('#tableDashboard').DataTable({
+                    processing: true,
+                    serverSide: true,
+                    lengthMenu: [
+                        10, 25, 50,
+                        { label: 'All', value: -1 }
+                        ],
+                    ajax: {
+                        url: "{{ route('dataDashboard') }}",
+                        type: 'POST',
+                        data: {
+                            _token:"{{ csrf_token() }}"
+                        },
+                    },
+                    columns: [
+                        {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
+                        {
+                            data: 'aksi',
+                            name: 'aksi',
+                            orderable: false,
+                            searchable: false,
+                            render:function(data,type,row,meta){
+                                return data;
+                            }
+                        },
+                        {
+                            data: 'nik_user_input',
+                            name: 'nik_user_input',
+                            orderable: false,
+                            searchable: true,
+                            render:function(data, type, row, meta){
+                                return row.nik_user_input;
+                            }
+                        },
+                        {
+                            data: 'nama_user_input',
+                            name: 'nama_user_input',
+                            orderable: true,
+                            searchable: true,
+                            render:function(data,type,row,meta){
+                                return row.nama_user_input;
+                            }
+                        },
+                        {
+                            data: 'foto',
+                            name: 'foto',
+                            orderable: false,
+                            searchable: false,
+                            render:function(data,type,row,meta){
+                                console.log(row);
+                                return row.foto;
+                            }
+
+                        },
+                        {
+                            data: 'location_in',
+                            name: 'location_in',
+                            orderable: true,
+                            searchable: true,
+                            render:function(data,type,row,meta){
+                                return row.location_in;
+                            }
+                        },
+                        {
+                            data: 'created_by',
+                            name: 'created_by',
+                            orderable: true,
+                            searchable: true,
+                            render:function(data,type,row,meta){
+                                return row.created_by;
+                            }
+                        },
+                        {
+                            data: 'created_at',
+                            name: 'created_at',
+                            orderable: true,
+                            searchable: true,
+                            render:function(data,type,row,meta){
+                                return row.created_at;
+                            }
+                        },
+                    ]
+                })
+            });
+
+            function deleteData(id)
+            {
+                swal.fire({
+                    title: "Yakin Untuk Menghapus Data?",
+                    text: "Data yang dihapus tidak dapat dikembalikan!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Ya, hapus datanya!"
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                        swal.fire({
+                            title: "Dihapus!",
+                            text: "Data Yang Dipilih Berhasil Di Hapus.",
+                            icon: "success"
+                        }).then((hehe)=>{
+                           $.ajax({
+                                type : 'POST',
+                                url : '{{ url("/dashboard/deletedata") }}',
+                                data: {
+                                    _token : "{{ csrf_token() }}",
+                                    id : id,
+                                },
+                                cache : false,
+                                success : function(respond){
+                                    if (respond == 0){
+                                        window.location.replace('{{ url("/dashboard") }}');
+                                    }else{
+                                        alert(error);
+                                    }
+                                }
+                           })
+                        })
+                    }
+                })
+            };
+        </script>
     </main>
 
 </x-app-layout>

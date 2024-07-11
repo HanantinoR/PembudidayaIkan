@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,13 +19,25 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 |
 */
 
+
+Route::group(['middleware'=> 'auth'],function(){
+    Route::get('/',function(){
+        return redirect('/dashboard');
+    });
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::post('/tableDashboard',[DashboardController::class,'dataDashboard'])->name('dataDashboard');
+
+});
+
+
 Route::get('/', function () {
     return redirect('/dashboard');
 })->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard')->middleware('auth');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard')->middleware('auth');
+
 
 Route::get('/tables', function () {
     return view('tables');

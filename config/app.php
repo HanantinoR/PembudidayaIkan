@@ -7,7 +7,7 @@ return [
 
     'hour' => env('SCHEDULE_HOUR', ''),
     'min' => env('SCHEDULE_MIN', ''),
-    'is_demo' => env('IS_DEMO', false),
+    // 'is_demo' => env('IS_DEMO', false),
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -171,6 +171,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -186,6 +187,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
     ])->toArray(),
 
 ];
