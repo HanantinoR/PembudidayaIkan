@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        <x-app.navbar />
+        <x-app.navbar :data=$titlePage/>
         <div class="container-fluid py-4 px-5">
             <div class="row">
                 <div class="col-md-12">
@@ -10,6 +10,7 @@
                             <h3 class="font-weight-bold mb-0">Hello, {{($nama->name)}}</h3>
                             <p class="mb-0">Apps you might like!</p>
                         </div>
+
                         {{-- <button type="button"
                             class="btn btn-sm btn-white btn-icon d-flex align-items-center mb-0 ms-md-auto mb-sm-0 mb-2 me-2">
                             <span class="btn-inner--icon">
@@ -38,7 +39,7 @@
                     style="background-image: url('../assets/img/header-blue-purple.jpg')"></div>
                 <div class="card-body text-start p-4 w-100">
                     <div class="row">
-                        <div class="col-sm-3 col-6 pb-1">
+                        <div class="col-sm-3 col-6 pb-2">
                             <a href="" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
                                 <span class="btn-inner--icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
@@ -53,7 +54,7 @@
                                 <span class="btn-inner--text">Profile</span>
                             </a>
                         </div>
-                        <div class="col-sm-3 col-6 pb-1">
+                        <div class="col-sm-3 col-6 pb-2 ">
                             <a href="" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
                                 <span class="btn-inner--icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
@@ -69,8 +70,8 @@
                                 <span class="btn-inner--text">Tanggal</span>
                             </a>
                         </div>
-                        <div class="col-sm-3 col-3 pb-1">
-                            <a href="" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
+                        <div class="col-sm-3 col-6 pb-1">
+                            <a href="{{route('historyInputData')}}" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
                                 <span class="btn-inner--icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                         <defs>
@@ -85,11 +86,11 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <span class="btn-inner--text">Input Data</span>
+                                <span class="btn-inner--text"> History Data</span>
                             </a>
                         </div>
-                        <div class="col-sm-3 col-3 pb-1">
-                            <a href="" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
+                        <div class="col-sm-3 col-6 pb-1">
+                            <a href="{{route('historySentWasis')}}" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
                                 <span class="btn-inner--icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                         <defs>
@@ -100,7 +101,7 @@
                                         </g>
                                         </svg>
                                 </span>
-                                <span class="btn-inner--text">Kirim Wasis</span>
+                                <span class="btn-inner--text">History Wasis</span>
                             </a>
                         </div>
                     </div>
@@ -114,6 +115,9 @@
                                 <div>
                                     <h6 class="font-weight-semibold text-lg mb-0">Recent transactions</h6>
                                     <p class="text-sm mb-sm-0 mb-2">These are details about the last transactions</p>
+                                </div>
+                                <div class="ms-auto d-flex">
+                                    <input type="text" class="form-control" name="searchBar" id="searchBar" placeholder="search...">
                                 </div>
                             </div>
                         </div>
@@ -202,7 +206,6 @@
                             orderable: false,
                             searchable: false,
                             render:function(data,type,row,meta){
-                                console.log(row);
                                 return row.foto;
                             }
 
@@ -234,11 +237,12 @@
                                 return row.created_at;
                             }
                         },
-                    ]
+                    ],
+
                 })
             });
 
-            function deleteData(id)
+            function delete_data(id)
             {
                 swal.fire({
                     title: "Yakin Untuk Menghapus Data?",

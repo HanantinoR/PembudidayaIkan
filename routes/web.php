@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\LoginController;
@@ -24,20 +25,23 @@ Route::group(['middleware'=> 'auth'],function(){
     Route::get('/',function(){
         return redirect('/dashboard');
     });
+
+    //Dashboard Menu
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
-    Route::post('/tableDashboard',[DashboardController::class,'dataDashboard'])->name('dataDashboard');
+    Route::post('/tabledashboard',[DashboardController::class,'getDataDashboard'])->name('dataDashboard');
 
+    //History Menu
+    Route::get('/historyinput',[HistoryController::class,'indexInputData'])->name('historyInputData');
+    Route::get('/historysent',[HistoryController::class,'indexSentWasis'])->name('historySentWasis');
+    //---List Data History Input Data
+    Route::post('/history/getdatasurveyuser',[HistoryController::class,'getDataSurveyUser'])->name('getDataSurvey');
+    Route::get('/history/getalldata',[HistoryController::class,'getAllData'])->name('getAllDataExcel');
+
+    //Pembesarab Menu
+    Route::get('/tables', function () {
+        return view('tables');
+    })->name('tables')->middleware('auth');
 });
-
-
-Route::get('/', function () {
-    return redirect('/dashboard');
-})->middleware('auth');
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard')->middleware('auth');
-
 
 Route::get('/tables', function () {
     return view('tables');

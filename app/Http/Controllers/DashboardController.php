@@ -15,10 +15,11 @@ class DashboardController extends Controller
     public function index()
     {
         $nama = Auth::user();
-        return view('dashboard', compact('nama'));
+        $titlePage = 'Dashboard';
+        return view('dashboard', compact('nama','titlePage'));
     }
 
-    function dataDashboard()
+    function getDataDashboard()
     {
         $nama = Auth::user()->name;
         if (Auth::user()->role == "Admin") {
@@ -30,7 +31,7 @@ class DashboardController extends Controller
         ->addColumn('aksi', function($datatb){
             if (Auth::user()->role == "Admin") {
                 return
-                    '<button type="button" class="btn btn-danger" onclick="deleteData('.$datatb->id.')">Hapus Data!</button>';
+                    '<button type="button" class="btn btn-danger" onclick="delete_data('.$datatb->id.')">Hapus Data!</button>';
             }else{
                 return
                 '';
