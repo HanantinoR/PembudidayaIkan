@@ -36,6 +36,9 @@ Route::group(['middleware'=> 'auth'],function(){
     //---List Data History Input Data
     Route::post('/history/getdatasurveyuser',[HistoryController::class,'getDataSurveyUser'])->name('getDataSurvey');
     Route::get('/history/getalldata',[HistoryController::class,'getAllData'])->name('getAllDataExcel');
+    //---Data Foto User History Input Data
+    Route::post('/history/getdatafotouser', [HistoryController::class,'getDataFotoUser'])->name('getDataFotoUser');
+    Route::put('/history/uploadfotouser/{id}',[HistoryController::class,'putUploadFoto'])->name('uploadFotoUser');
 
     //Pembesarab Menu
     Route::get('/tables', function () {

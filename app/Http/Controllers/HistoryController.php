@@ -51,7 +51,7 @@ class HistoryController extends Controller
         ->addColumn('foto', function($datatb){
             if (DB::table('presensi')->where('nik_user_input','=',$datatb->nik)->value('foto_in') == null) {
                 return
-                '<a href="/history/upload/'.$datatb->id.'" class="btn btn-sm btn-info" style="margin-top:5px;">
+                '<a class="btn btn-sm btn-info uploadFoto" style="margin-top:5px;" data-id='.$datatb->id.' data-bs-toggle="modal" data-bs-target="#modal-form">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                     <defs>
                     </defs>
@@ -65,13 +65,13 @@ class HistoryController extends Controller
                 </a>';
             }else{
                 return
-                '<img src="'.url(Storage::url("/uploads/absensi/".DB::table('presensi')->where('nik_user_input','=',$datatb->nik)->value('foto_in'))).'" alt="" class="imaged w64 ">';
+                '<img src="'.Storage::url("uploads/absensi/".DB::table('presensi')->where('nik_user_input','=',$datatb->nik)->value('foto_in')).'" alt="" class="imaged w64 " style="max-width:100px; min-width:50px;">';
             }
         })
         ->addColumn('wasis', function($datatb){
             if (DB::table('presensi')->where('nik_user_input','=',$datatb->nik)->value('foto_in') == null) {
                 return
-                '<a href="/history/cekbeforekirim/'.$datatb->id.'" class="btn btn-sm btn-info" style="margin-top:5px;" data-bs-toggle="modal" data-bs-target="#modal-form">
+                '<a href="/history/cekbeforekirim/'.$datatb->id.'" class="btn btn-sm btn-info" style="margin-top:5px;" >
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                     <defs>
                     </defs>
@@ -355,5 +355,35 @@ class HistoryController extends Controller
 
         $excel->save($filename);
         return Response::download($filename)->deleteFileAfterSend(true);
+    }
+
+    function getDataFotoUser(Request $request)
+    {
+        $id = $request->id;
+        $dataFoto = DB::table('survey')->where('id','=',$id)->first();
+
+        return response()->json([
+            'data'=> $dataFoto
+        ],200);
+    }
+
+    public function putUploadFoto(Request $request)
+    {
+        // dd($request->name, $request)
+        $fileFoto = $request->file("foto");
+        $fileNameFoto = date("YmdHis")."_".$request->nik."_".$request->name.'_'.$fileFoto->getClientOriginalName();
+        $fileFoto->move(base_path('/storage/app/public/uploads/absensi/'),$fileNameFoto);
+        DB::table('presensi')->insert([
+            'nama_user_input' => $request->name,
+            'nik_user_input' => $request->nik,
+            'foto_in' => $fileNameFoto,
+            'location_in' => $request->latitude.', '.$request->longitude,
+            'created_at' => date('Y-m-d H:i:s'),
+            'created_by' => Auth::user()->name
+        ]);
+
+        return respone()->json([
+            'message' => 'Data Sudah Diupload',
+        ],200);
     }
 }
