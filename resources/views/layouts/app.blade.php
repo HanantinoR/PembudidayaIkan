@@ -75,6 +75,27 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/corporate-ui-dashboard.css?v=1.0.0" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .fixed-plugin .fixed-plugin-button{
+            width: 100%;
+            text-align: center;
+            right: 0;!important;
+            border-radius: 0%;!important;
+            bottom:0;!important;
+        }
+        .btn{
+            margin: 0;!important;
+        }
+        .buttonnoRadius{
+            --bs-btn-border-radius:0px;
+            padding:30px 0 30px 0;
+        }
+        @media screen and (min-width: 500px) {
+            .fixed-plugin{
+                display: none;
+        }
+}
+    </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -98,10 +119,22 @@
     {{ $slot }}
 
     <div class="fixed-plugin">
-        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-            <i class="fa fa-cog py-2"></i>
-        </a>
-        <div class="card shadow-lg ">
+        <div class="fixed-plugin btn-group fixed-plugin-button text-dark position-fixed" role="group" aria-label="First group" style="text-align: center
+        ">
+            <a type="button" class="btn btn-secondary buttonnoRadius"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <button type="button" class="btn btn-secondary buttonnoRadius"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-secondary buttonnoRadius"><i class="fa fa-file-text" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-secondary buttonnoRadius"><i class="fa fa-user" aria-hidden="true"></i></button>
+        </div>
+        {{-- <a class="fixed-plugin-button text-dark position-fixed px-8 py-">
+            <div class=" button py-2">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="py-2">
+                <i class="fa fa-user"></i>
+            </div>
+        </a> --}}
+        {{-- <div class="card shadow-lg ">
             <div class="card-header pb-0 pt-3 ">
                 <div class="float-start">
                     <h5 class="mt-3 mb-0">Corporate UI Configurator</h5>
@@ -175,7 +208,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <!--   Core JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>
