@@ -1,7 +1,14 @@
 <x-app-layout>
 
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        <x-app.navbar :data=$titlePage/>
+        <style>
+            @media screen and (max-width :576px) {
+                .btn-inner--text {
+                    display: none;
+                }
+            }
+        </style>
+        <x-app.navbar :data=$data/>
         <div class="container-fluid py-4 px-5">
             <div class="row">
                 <div class="col-md-12">
@@ -71,7 +78,7 @@
                             </a>
                         </div>
                         <div class="col-sm-3 col-6 pb-1">
-                            <a href="{{route('historyInputData')}}" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
+                            <a href="{{route('historyinput')}}" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
                                 <span class="btn-inner--icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                         <defs>
@@ -90,7 +97,7 @@
                             </a>
                         </div>
                         <div class="col-sm-3 col-6 pb-1">
-                            <a href="{{route('historySentWasis')}}" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
+                            <a href="{{route('historysendwasis')}}" class="btn btn-outline-white btn-blur btn-icon d-flex align-items-center mb-0">
                                 <span class="btn-inner--icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                         <defs>
@@ -108,7 +115,7 @@
                 </div>
             </div>
             <div class="row my-4">
-                <div class="col-lg-12 col-md-8 col-sm-6">
+                <div class="col-lg-12 col-md-12 col-sm-6">
                     <div class="card shadow-xs border">
                         <div class="card-header border-bottom pb-0">
                             <div class="d-sm-flex align-items-center mb-3">
@@ -165,7 +172,7 @@
                         { label: 'All', value: -1 }
                         ],
                     ajax: {
-                        url: "{{ route('dataDashboard') }}",
+                        url: "{{ route('dashboard.listdata') }}",
                         type: 'POST',
                         data: {
                             _token:"{{ csrf_token() }}"
@@ -242,7 +249,7 @@
                 })
             });
 
-            function delete_data(id)
+            function deleteDataDashboard(id)
             {
                 swal.fire({
                     title: "Yakin Untuk Menghapus Data?",
@@ -261,7 +268,7 @@
                         }).then((hehe)=>{
                            $.ajax({
                                 type : 'POST',
-                                url : '{{ url("/dashboard/deletedata") }}',
+                                url : '{{ route("dashboard.deletedata") }}',
                                 data: {
                                     _token : "{{ csrf_token() }}",
                                     id : id,
@@ -269,7 +276,7 @@
                                 cache : false,
                                 success : function(respond){
                                     if (respond == 0){
-                                        window.location.replace('{{ url("/dashboard") }}');
+                                        window.location.replace('{{ route("dashboard")}}');
                                     }else{
                                         alert(error);
                                     }

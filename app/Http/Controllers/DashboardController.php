@@ -15,15 +15,19 @@ class DashboardController extends Controller
     public function index()
     {
         $nama = Auth::user();
-        $titlePage = 'Dashboard';
-        return view('dashboard', compact('nama','titlePage'));
+        $data = [
+            'titlePage' => 'DASHBOARD'
+        ];
+
+        // dd(Auth::user());
+        return view('dashboard', compact('nama','data'));
     }
 
     function getDataDashboard()
     {
         $nama = Auth::user()->name;
         if (Auth::user()->role == "Admin") {
-            $list_foto = DB::table('presensi')->orderBy('created_at','DESC')->get();
+            $list_foto = DB::table('presensi')->orderBy('created_at','DESC')->limit(20)->get();
         }else{
             $list_foto = DB::table('presensi')->where('created_by','=',$nama)->orderBy('created_at','DESC')->get();
         }
@@ -31,7 +35,7 @@ class DashboardController extends Controller
         ->addColumn('aksi', function($datatb){
             if (Auth::user()->role == "Admin") {
                 return
-                    '<button type="button" class="btn btn-danger" onclick="delete_data('.$datatb->id.')">Hapus Data!</button>';
+                    '<button type="button" class="btn btn-danger" onclick="deleteDataDashboard('.$datatb->id.')">Hapus Data!</button>';
             }else{
                 return
                 '';
@@ -45,11 +49,17 @@ class DashboardController extends Controller
                 </a>';
             }else{
                 return
-                '<img src="'.url(Storage::url("/uploads/absensi/".DB::table('presensi')->where('nik_user_input','=',$datatb->nik_user_input)->value('foto_in'))).'" alt="" class="imaged w64 ">';
+                '<img src="'.url(Storage::url("/uploads/absensi/".DB::table('presensi')->where('nik_user_input','=',$datatb->nik_user_input)->value('foto_in'))).'" alt="" class="imaged w64 " style="max-width:100px">';
             }
         })
         ->rawColumns(['foto','aksi'])
         ->addIndexColumn()
         ->make(true);
+    }
+
+    function deleteDashboard(){
+        $id = $_POST['id'];
+        DB::table('presensi')->where('id','=',$id)->delete();
+        return 0;
     }
 }

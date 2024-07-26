@@ -63,7 +63,7 @@
                             <a class="dropdown-item border-radius-md" href="javascript:;">
                                 <div class="d-flex py-1">
                                     <div class="my-auto">
-                                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 "
+                                        <img src="{{asset('/assets/img/team-2.jpg')}}" class="avatar avatar-sm  me-3 "
                                             alt="user image">
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">

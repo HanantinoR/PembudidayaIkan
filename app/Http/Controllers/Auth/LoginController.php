@@ -29,6 +29,12 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
+        $dashboard = [
+            'Karyawan' => 'dashboard',
+            'User' => 'management',
+            'Surveyor' => 'dashboard',
+            'Admin' => 'dashboard'
+        ];
 
         $credentials = $request->only('email', 'password');
 
@@ -37,10 +43,8 @@ class LoginController extends Controller
         if (Auth::attempt($credentials, $rememberMe)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard');
+            return redirect()->route($dashboard[Auth::user()->role]);
         }
-
-
 
         return back()->withErrors([
             'message' => 'The provided credentials do not match our records.',

@@ -12,18 +12,25 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory()->create([
-            'name' => 'Alec Thompson',
+            'nama' => 'Alec Thompson',
             'email' => 'admin@corporateui.com',
             'password' => Hash::make('secret'),
-            'about' => "Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).",
-            'role' => 'admin',
+            'daerah' => "pusat",
+            'role' => 'Admin',
         ]);
         User::factory()->create([
-            'name' => 'admin',
+            'nama' => 'admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('admin'),
-            'about' => "Ini admin",
-            'role' => 'admin',
+            'daerah' => "pusat",
+            'role' => 'Surveyor',
+        ]);
+        User::factory()->create([
+            'nama' => 'test',
+            'email' => 'test@admin.com',
+            'password' => Hash::make('test'),
+            'daerah' => "pusat",
+            'role' => 'User',
         ]);
     }
 }
