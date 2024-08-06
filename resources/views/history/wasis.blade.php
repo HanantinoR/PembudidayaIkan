@@ -169,7 +169,7 @@
                         {data: 'nik', name: 'nik', orderable: false, searchable: true},
                         {data: 'city', name: 'city', orderable: false, searchable: true},
                         {data: 'province', name: 'province', orderable: false, searchable: true},
-                        {data: 'namaPetugas', name: 'namaPetugas', orderable: false, searchable: true},
+                        {data: 'nama_petugas', name: 'nama_petugas', orderable: false, searchable: true},
                         {data: 'upt', name: 'upt', orderable: false, searchable: true},
                         {data: 'created_by', name: 'created_by', orderable: false, searchable: true,visible:true},
                         {data: 'updated_by', name: 'updated_by', orderable: false, searchable: true, visible:true}
@@ -228,8 +228,8 @@
                             text: "Data anda sudah berhasil di upload!",
                             icon: "success",
                            }).then((result) => {
-                                if(result.isConfirmed) {
-                                    window.location.reload;
+                            if(result.isConfirmed) {
+                                    location.reload();
                                 }
                            })
                         }

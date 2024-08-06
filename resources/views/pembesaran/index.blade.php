@@ -425,8 +425,8 @@
                                             res[index]['sellingPrice'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="inCome[]" name="inCome[]">' +
-                                            res[index]['inCome'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="income[]" name="income[]">' +
+                                            res[index]['income'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
                                             '<textarea required class="form form-control" id="feedType[]" name="feedType[]">' +
@@ -437,16 +437,16 @@
                                             res[index]['feedTotal'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="sourceSupply[]" name="sourceSupply[]">' +
-                                            res[index]['sourceSupply'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="source_supply[]" name="source_supply[]">' +
+                                            res[index]['source_supply'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="feedPrice[]" name="feedPrice[]">' +
-                                            res[index]['feedPrice'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="feed_price[]" name="feed_price[]">' +
+                                            res[index]['feed_price'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="feedCost[]" name="feedCost[]">' +
-                                            res[index]['feedCost'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="feed_cost[]" name="feed_cost[]">' +
+                                            res[index]['feed_cost'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
                                             '<textarea required class="form form-control" id="sumberBenih[]" name="sumberBenih[]">' +
@@ -465,8 +465,8 @@
                                             res[index]['benihCost'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="totalTk[]" name="totalTk[]">' +
-                                            res[index]['totalTk'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="total_tk[]" name="total_tk[]">' +
+                                            res[index]['total_tk'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
                                             '<textarea required class="form form-control" id="modal[]" name="modal[]">' +
@@ -481,20 +481,20 @@
                                             res[index]['sumberKredit'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="costMaintenanceMedia[]" name="costMaintenanceMedia[]">' +
-                                            res[index]['costMaintenanceMedia'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="cost_maintenance_media[]" name="cost_maintenance_media[]">' +
+                                            res[index]['cost_maintenance_media'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="costPurchaseTools[]" name="costPurchaseTools[]">' +
-                                            res[index]['costPurchaseTools'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="cost_purchase_tools[]" name="cost_purchase_tools[]">' +
+                                            res[index]['cost_purchase_tools'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="biayaPenyusutan[]" name="biayaPenyusutan[]">' +
-                                            res[index]['biayaPenyusutan'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="biaya_penyusutan[]" name="biaya_penyusutan[]">' +
+                                            res[index]['biaya_penyusutan'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="biayaTengaKerja[]" name="biayaTengaKerja[]">' +
-                                            res[index]['biayaTengaKerja'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="biaya_tenga_kerja[]" name="biaya_tenga_kerja[]">' +
+                                            res[index]['biaya_tenga_kerja'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
                                             '<textarea required class="form form-control" id="ipal[]" name="ipal[]">' +
@@ -505,28 +505,28 @@
                                             res[index]['tandon'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="greenBelt[]" name="greenBelt[]">' +
-                                            res[index]['greenBelt'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="green_belt[]" name="green_belt[]">' +
+                                            res[index]['green_belt'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="jarakPantai[]" name="jarakPantai[]">' +
-                                            res[index]['jarakPantai'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="jarak_pantai[]" name="jarak_pantai[]">' +
+                                            res[index]['jarak_pantai'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="sumberAir[]" name="sumberAir[]">' +
-                                            res[index]['sumberAir'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="sumber_air[]" name="sumber_air[]">' +
+                                            res[index]['sumber_air'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="statusIzin[]" name="statusIzin[]">' +
-                                            res[index]['statusIzin'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="status_izin[]" name="status_izin[]">' +
+                                            res[index]['status_izin'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="statusNib[]" name="statusNib[]">' +
-                                            res[index]['statusNib'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="status_nib[]" name="status_nib[]">' +
+                                            res[index]['status_nib'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="skalaUsaha[]" name="skalaUsaha[]">' +
-                                            res[index]['skalaUsaha'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="skala_usaha[]" name="skala_usaha[]">' +
+                                            res[index]['skala_usaha'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
                                             '<textarea required class="form form-control" id="asuransi[]" name="asuransi[]">' +
@@ -541,28 +541,28 @@
                                             res[index]['penghargaan'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="dukunganPemda[]" name="dukunganPemda[]">' +
-                                            res[index]['dukunganPemda'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="dukungan_pemda[]" name="dukungan_pemda[]">' +
+                                            res[index]['dukungan_pemda'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="dukunganPusat[]" name="dukunganPusat[]">' +
-                                            res[index]['dukunganPusat'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="dukungan_pusat[]" name="dukungan_pusat[]">' +
+                                            res[index]['dukungan_pusat'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="namaPenyuluh[]" name="namaPenyuluh[]">' +
-                                            res[index]['namaPenyuluh'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="nama_penyuluh[]" name="nama_penyuluh[]">' +
+                                            res[index]['nama_penyuluh'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
                                             '<textarea required class="form form-control" id="sertifikat[]" name="sertifikat[]">' +
                                             res[index]['sertifikat'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="namaPetugas[]" name="namaPetugas[]">' +
-                                            res[index]['namaPetugas'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="nama_petugas[]" name="nama_petugas[]">' +
+                                            res[index]['nama_petugas'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="nikPetugas[]" name="nikPetugas[]">' +
-                                            res[index]['nikPetugas'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="nik_petugas[]" name="nik_petugas[]">' +
+                                            res[index]['nik_petugas'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
                                             '<textarea required class="form form-control" id="upt[]" name="upt[]">' +

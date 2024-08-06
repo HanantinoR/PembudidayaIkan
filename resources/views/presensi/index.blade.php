@@ -116,7 +116,7 @@
                                     </button>
                                 </div>
                                 <div class="col">
-                                    <button type="button" class="btn btn-round bg-gradient-danger btn-lg w-100 mt-4 mb-0 btnTakePhoto" id="btnTakePhoto">
+                                    <button type="button" class="btn btn-round bg-gradient-danger btn-lg w-100 mt-4 mb-0 btnTakePhoto" id="btnBack">
                                         <span class="btn-inner--icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                 <defs>
@@ -268,7 +268,9 @@
 
                 // https://www.jsdelivr.com/package/npm/face-api.js#id-face-api.js-for-the-browser
 
-
+                $('#btnBack').on('click',function(){
+                    window.location.replace('{{ url("/dashboard") }}');
+                });
             });
 
             function onlyNumbers(angka, id) {

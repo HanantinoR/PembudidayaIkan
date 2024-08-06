@@ -1380,9 +1380,9 @@
                                             <label>Pendapatan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="pendapatan" name="pendapatan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your pendapatan" value="{{$checkWasis->inCome}}" aria-label="Pendapatan"
+                                                    placeholder="Enter your pendapatan" value="{{$checkWasis->income}}" aria-label="Pendapatan"
                                                     aria-describedby="pendapatan-addon" readonly>
-                                                @if($checkWasis->inCome == null || $checkWasis->inCome == "null")
+                                                @if($checkWasis->income == null || $checkWasis->income == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1554,9 +1554,9 @@
                                             <label>Harga Pakan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="harga_pakan" name="harga_pakan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Harga Pakan" value="{{$checkWasis->feedPrice}}" aria-label="Harga Pakan"
+                                                    placeholder="Enter your Harga Pakan" value="{{$checkWasis->feed_price}}" aria-label="Harga Pakan"
                                                     aria-describedby="harga_pakan-addon" readonly>
-                                                @if($checkWasis->feedPrice == null || $checkWasis->feedPrice == "null")
+                                                @if($checkWasis->feed_price == null || $checkWasis->feed_price == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1591,9 +1591,9 @@
                                             <label>Biaya Pakan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_pakan" name="biaya_pakan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Pakan" value="{{$checkWasis->feedCost}}" aria-label="Biaya_pakan"
+                                                    placeholder="Enter your Biaya Pakan" value="{{$checkWasis->feed_cost}}" aria-label="Biaya_pakan"
                                                     aria-describedby="biaya_pakan-addon" readonly>
-                                                @if($checkWasis->feedCost == null || $checkWasis->feedCost == "null")
+                                                @if($checkWasis->feed_cost == null || $checkWasis->feed_cost == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1789,9 +1789,9 @@
                                             <label>Jumlah TK</label>
                                             <div class="mb-3">
                                                 <input type="text" id="jumlah_tk" name="jumlah_tk" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Jumlah TK" value="{{$checkWasis->totalTk}}" aria-label="Jumlah TK"
+                                                    placeholder="Enter your Jumlah TK" value="{{$checkWasis->total_tk}}" aria-label="Jumlah TK"
                                                     aria-describedby="jumlah_tk-addon" readonly>
-                                                @if($checkWasis->totalTk == null || $checkWasis->totalTk == "null")
+                                                @if($checkWasis->total_tk == null || $checkWasis->total_tk == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1963,9 +1963,9 @@
                                             <label>Biaya Pembuatan Media Pemeliharaan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_pembuatan_media_pemeliharaan" name="biaya_pembuatan_media_pemeliharaan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Pembuatan Media Pemeliharaan" value="{{$checkWasis->costMaintenanceMedia}}" aria-label="Biaya Pembuatan Media Pemeliharaan"
+                                                    placeholder="Enter your Biaya Pembuatan Media Pemeliharaan" value="{{$checkWasis->cost_maintenance_media}}" aria-label="Biaya Pembuatan Media Pemeliharaan"
                                                     aria-describedby="biaya_pembuatan_media_pemeliharaan-addon" readonly>
-                                                @if($checkWasis->costMaintenanceMedia == null || $checkWasis->costMaintenanceMedia == "null")
+                                                @if($checkWasis->cost_maintenance_media == null || $checkWasis->cost_maintenance_media == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2000,9 +2000,9 @@
                                             <label>Biaya Pembelian Peralatan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_pembelian_peralatan" name="biaya_pembelian_peralatan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Pembelian Peralatan" value="{{$checkWasis->costPurchaseTools}}}" aria-label="Biaya Pembelian Peralatan"
+                                                    placeholder="Enter your Biaya Pembelian Peralatan" value="{{$checkWasis->cost_purchase_tools}}}" aria-label="Biaya Pembelian Peralatan"
                                                     aria-describedby="biaya_pembelian_peralatan-addon" readonly>
-                                                @if($checkWasis->costPurchaseTools == null || $checkWasis->costPurchaseTools == "null")
+                                                @if($checkWasis->cost_purchase_tools == null || $checkWasis->cost_purchase_tools == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2037,9 +2037,9 @@
                                             <label>Biaya Penyusutan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_penyusutan" name="biaya_penyusutan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Penyusutan" value="{{$checkWasis->biayaPenyusutan}}" aria-label="Biaya Penyusutan"
+                                                    placeholder="Enter your Biaya Penyusutan" value="{{$checkWasis->biaya_penyusutan}}" aria-label="Biaya Penyusutan"
                                                     aria-describedby="biaya_penyusutan-addon" readonly>
-                                                @if($checkWasis->biayaPenyusutan == null || $checkWasis->biayaPenyusutan == "null")
+                                                @if($checkWasis->biaya_penyusutan == null || $checkWasis->biaya_penyusutan == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2074,9 +2074,9 @@
                                             <label>Biaya Tenaga Kerja</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_tenaga_kerja" name="biaya_tenaga_kerja" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Tenaga Kerja" value="{{$checkWasis->biayaTengaKerja}}" aria-label="Biaya Tenaga Kerja"
+                                                    placeholder="Enter your Biaya Tenaga Kerja" value="{{$checkWasis->biaya_tenga_kerja}}" aria-label="Biaya Tenaga Kerja"
                                                     aria-describedby="biaya_tenaga_kerja-addon" readonly>
-                                                @if($checkWasis->biayaTengaKerja == null || $checkWasis->biayaTengaKerja == "null")
+                                                @if($checkWasis->biaya_tenga_kerja == null || $checkWasis->biaya_tenga_kerja == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2211,9 +2211,9 @@
                                             <label>Green Belt</label>
                                             <div class="mb-3">
                                                 <input type="text" id="green_belt" name="green_belt" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Green Belt" value="{{$checkWasis->greenBelt}}" aria-label="Green Belt"
+                                                    placeholder="Enter your Green Belt" value="{{$checkWasis->green_belt}}" aria-label="Green Belt"
                                                     aria-describedby="green_belt-addon" readonly>
-                                                @if($checkWasis->greenBelt == null || $checkWasis->greenBelt == "null")
+                                                @if($checkWasis->green_belt == null || $checkWasis->green_belt == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2226,7 +2226,7 @@
                                                         </svg>
                                                         <strong> Data Green Belt Tidak Lengkap</strong>
                                                     </div>
-                                                @elseif(isset($staticValue['ada_tidak'][strtoupper($checkWasis->greenBelt)]) == false)
+                                                @elseif(isset($staticValue['ada_tidak'][strtoupper($checkWasis->green_belt)]) == false)
                                                     <div class="alert alert-warning">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class=" me-2">
                                                             <defs>
@@ -2237,7 +2237,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->greenBelt}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->green_belt}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">
@@ -2261,9 +2261,9 @@
                                             <label>Jarak ke Bibir Pantai</label>
                                             <div class="mb-3">
                                                 <input type="text" id="jarak_ke_bibir_pantai" name="jarak_ke_bibir_pantai" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Jarak ke Bibir Pantai" value="{{$checkWasis->jarakPantai}}" aria-label="Jarak ke Bibir Pantai"
+                                                    placeholder="Enter your Jarak ke Bibir Pantai" value="{{$checkWasis->jarak_pantai}}" aria-label="Jarak ke Bibir Pantai"
                                                     aria-describedby="jarak_ke_bibir_pantai-addon" readonly>
-                                                @if($checkWasis->jarakPantai == null || $checkWasis->jarakPantai == "null")
+                                                @if($checkWasis->jarak_pantai == null || $checkWasis->jarak_pantai == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2298,9 +2298,9 @@
                                             <label>Sumber Air</label>
                                             <div class="mb-3">
                                                 <input type="text" id="sumber_air" name="sumber_air" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Sumber Air" value="{{$checkWasis->sumberAir}}" aria-label="Sumber Air"
+                                                    placeholder="Enter your Sumber Air" value="{{$checkWasis->sumber_air}}" aria-label="Sumber Air"
                                                     aria-describedby="sumber_air-addon" readonly>
-                                                @if($checkWasis->sumberAir == null || $checkWasis->sumberAir == "null")
+                                                @if($checkWasis->sumber_air == null || $checkWasis->sumber_air == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2335,9 +2335,9 @@
                                             <label>Status Izin</label>
                                             <div class="mb-3">
                                                 <input type="text" id="status_izin" name="status_izin" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Status Izin" value="{{$checkWasis->statusIzin}}" aria-label="Status Izin"
+                                                    placeholder="Enter your Status Izin" value="{{$checkWasis->status_izin}}" aria-label="Status Izin"
                                                     aria-describedby="status_izin-addon" readonly>
-                                                @if($checkWasis->statusIzin == null || $checkWasis->statusIzin == "null")
+                                                @if($checkWasis->status_izin == null || $checkWasis->status_izin == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2350,7 +2350,7 @@
                                                         </svg>
                                                         <strong> Data Status Izin Tidak Lengkap</strong>
                                                     </div>
-                                                @elseif(isset($staticValue['perizinan'][strtoupper($checkWasis->statusIzin)]) == false)
+                                                @elseif(isset($staticValue['perizinan'][strtoupper($checkWasis->status_izin)]) == false)
                                                     <div class="alert alert-warning">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class=" me-2">
                                                             <defs>
@@ -2361,7 +2361,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->statusIzin}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->status_izin}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">
@@ -2385,9 +2385,9 @@
                                             <label>Status NIB</label>
                                             <div class="mb-3">
                                                 <input type="text" id="status_nib" name="status_nib" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Status NIB" value="{{$checkWasis->statusNib}}" aria-label="Status NIB"
+                                                    placeholder="Enter your Status NIB" value="{{$checkWasis->status_nib}}" aria-label="Status NIB"
                                                     aria-describedby="status_nib-addon" readonly>
-                                                @if($checkWasis->statusNib == null || $checkWasis->statusNib == "null")
+                                                @if($checkWasis->status_nib == null || $checkWasis->status_nib == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2400,7 +2400,7 @@
                                                         </svg>
                                                         <strong> Data Status NIB Tidak Lengkap</strong>
                                                     </div>
-                                                @elseif(isset($staticValue['ada_tidak'][strtoupper($checkWasis->statusNib)]) == false)
+                                                @elseif(isset($staticValue['ada_tidak'][strtoupper($checkWasis->status_nib)]) == false)
                                                     <div class="alert alert-warning">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class=" me-2">
                                                             <defs>
@@ -2411,7 +2411,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->statusNib}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->status_nib}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">
@@ -2435,9 +2435,9 @@
                                             <label>Skala Usaha</label>
                                             <div class="mb-3">
                                                 <input type="text" id="skala_usaha" name="skala_usaha" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Skala Usaha" value="{{$checkWasis->skalaUsaha}}" aria-label="Skala Usaha"
+                                                    placeholder="Enter your Skala Usaha" value="{{$checkWasis->skala_usaha}}" aria-label="Skala Usaha"
                                                     aria-describedby="skala_usaha-addon" readonly>
-                                                @if($checkWasis->skalaUsaha == null || $checkWasis->skalaUsaha == "null")
+                                                @if($checkWasis->skala_usaha == null || $checkWasis->skala_usaha == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2450,7 +2450,7 @@
                                                         </svg>
                                                         <strong> Data Skala Usaha Tidak Lengkap</strong>
                                                     </div>
-                                                @elseif(isset($staticValue['skala_usaha'][strtoupper($checkWasis->skalaUsaha)]) == false)
+                                                @elseif(isset($staticValue['skala_usaha'][strtoupper($checkWasis->skala_usaha)]) == false)
                                                     <div class="alert alert-warning">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class=" me-2">
                                                             <defs>
@@ -2461,7 +2461,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->skalaUsaha}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->skala_usaha}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">
@@ -2635,9 +2635,9 @@
                                             <label>Dukungan Pemda</label>
                                             <div class="mb-3">
                                                 <input type="text" id="dukungan_pemda" name="dukungan_pemda" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Dukungan Pemda" value="{{$checkWasis->dukunganPemda}}" aria-label="Dukungan Pemda"
+                                                    placeholder="Enter your Dukungan Pemda" value="{{$checkWasis->dukungan_pemda}}" aria-label="Dukungan Pemda"
                                                     aria-describedby="dukungan_pemda-addon" readonly>
-                                                @if($checkWasis->dukunganPemda == null || $checkWasis->dukunganPemda == "null")
+                                                @if($checkWasis->dukungan_pemda == null || $checkWasis->dukungan_pemda == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2650,7 +2650,7 @@
                                                         </svg>
                                                         <strong> Data Dukungan Pemda Tidak Lengkap</strong>
                                                     </div>
-                                                @elseif(isset($staticValue['dukungan_pemda'][strtoupper($checkWasis->dukunganPemda)]) == false)
+                                                @elseif(isset($staticValue['dukungan_pemda'][strtoupper($checkWasis->dukungan_pemda)]) == false)
                                                     <div class="alert alert-warning">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class=" me-2">
                                                             <defs>
@@ -2661,7 +2661,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->dukunganPemda}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->dukungan_pemda}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">
@@ -2685,9 +2685,9 @@
                                             <label>Dukungan Pusat</label>
                                             <div class="mb-3">
                                                 <input type="text" id="dukungan_pusat" name="dukungan_pusat" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Dukungan Pusat" value="{{$checkWasis->dukunganPusat}}" aria-label="Dukungan Pusat"
+                                                    placeholder="Enter your Dukungan Pusat" value="{{$checkWasis->dukungan_pusat}}" aria-label="Dukungan Pusat"
                                                     aria-describedby="dukungan_pusat-addon" readonly>
-                                                @if($checkWasis->dukunganPusat == null || $checkWasis->dukunganPusat == "null")
+                                                @if($checkWasis->dukungan_pusat == null || $checkWasis->dukungan_pusat == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2700,7 +2700,7 @@
                                                         </svg>
                                                         <strong> Data Dukungan Pusat Tidak Lengkap</strong>
                                                     </div>
-                                                @elseif(isset($staticValue['dukungan_pusat'][strtoupper($checkWasis->dukunganPusat)]) == false)
+                                                @elseif(isset($staticValue['dukungan_pusat'][strtoupper($checkWasis->dukungan_pusat)]) == false)
                                                     <div class="alert alert-warning">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class=" me-2">
                                                             <defs>
@@ -2711,7 +2711,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->dukunganPusat}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->dukungan_pusat}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">
@@ -2735,9 +2735,9 @@
                                             <label>Nama Penyuluh</label>
                                             <div class="mb-3">
                                                 <input type="text" id="nama_penyuluh" name="nama_penyuluh" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Nama Penyuluh" value="{{$checkWasis->namaPenyuluh}}" aria-label="Nama Penyuluh"
+                                                    placeholder="Enter your Nama Penyuluh" value="{{$checkWasis->nama_penyuluh}}" aria-label="Nama Penyuluh"
                                                     aria-describedby="nama_penyuluh-addon" readonly>
-                                                @if($checkWasis->namaPenyuluh == null || $checkWasis->namaPenyuluh == "null")
+                                                @if($checkWasis->nama_penyuluh == null || $checkWasis->nama_penyuluh == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2822,9 +2822,9 @@
                                             <label>Nama Petugas</label>
                                             <div class="mb-3">
                                                 <input type="text" id="nama_petugas" name="nama_petugas" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Nama Petugas" value="{{$checkWasis->namaPetugas}}" aria-label="Nama Petugas"
+                                                    placeholder="Enter your Nama Petugas" value="{{$checkWasis->nama_petugas}}" aria-label="Nama Petugas"
                                                     aria-describedby="nama_petugas-addon" readonly>
-                                                @if($checkWasis->namaPetugas == null || $checkWasis->namaPetugas == "null")
+                                                @if($checkWasis->nama_petugas == null || $checkWasis->nama_petugas == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2848,7 +2848,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->namaPetugas}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->nama_petugas}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">
@@ -2872,9 +2872,9 @@
                                             <label>NIK Petugas</label>
                                             <div class="mb-3">
                                                 <input type="text" id="nik_petugas" name="nik_petugas" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your NIK Petugas" value="{{$checkWasis->nikPetugas}}" aria-label="NIK Petugas"
+                                                    placeholder="Enter your NIK Petugas" value="{{$checkWasis->nik_petugas}}" aria-label="NIK Petugas"
                                                     aria-describedby="nik_petugas-addon" readonly>
-                                                @if($checkWasis->nikPetugas == null || $checkWasis->nikPetugas == "null")
+                                                @if($checkWasis->nik_petugas == null || $checkWasis->nik_petugas == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -2976,6 +2976,11 @@
                                                 </button>
                                             </div>
                                         </div>
+                                        <div class="col">
+                                            <button type="button" class="btn btn-round bg-gradient-warning btn-lg w-100 mt-4 mb-0 btnSubmitWasis" id="cancleBtn">
+                                                kembali
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -2991,29 +2996,29 @@
         <script>
             $(document).ready(function(){
 
-                // if($('.alert-danger').length>0){
-                //     $('#msg_error').append(`
-                //         <div class="alert alert-danger mb-5 p2 text-center">
-                //             <strong>
-                //                 !!Ada Data Yang Tidak Valid / Belum Diisi, Data Tidak Bisa Dikirim Ke Wasis! Lakukan Hapus Data Dan Upload Excel Kembali Untuk Data Ini!!
-                //             </strong>
-                //         </div>
-                //     `);
+                if($('.alert-danger').length>0){
+                    $('#msg_error').append(`
+                        <div class="alert alert-danger mb-5 p2 text-center">
+                            <strong>
+                                !!Ada Data Yang Tidak Valid / Belum Diisi, Data Tidak Bisa Dikirim Ke Wasis! Lakukan Hapus Data Dan Upload Excel Kembali Untuk Data Ini!!
+                            </strong>
+                        </div>
+                    `);
 
-                //     $('#submitWasis').html(`
-                //         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
-                //             <defs>
-                //             </defs>
-                //             <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
-                //                 <path d="M 45 0 c -3.974 0 -7.207 3.233 -7.207 7.207 v 55.992 c 0 3.974 3.233 7.207 7.207 7.207 c 3.974 0 7.207 -3.233 7.207 -7.207 V 7.207 C 52.207 3.233 48.974 0 45 0 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                //                 <circle cx="44.997" cy="82.797" r="7.207" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
-                //             </g>
-                //         </svg>
-                //         Terdapat Data Yang Salah! Tidak Dapat Kirim Ke Wasis!
-                //     `);
-                //     $('#submitWasis').attr('disabled',true);
-                //     $('#submitWasis').removeClass('bg-gradient-info').addClass('bg-gradient-danger');
-                // }
+                    $('#submitWasis').html(`
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
+                            <defs>
+                            </defs>
+                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                                <path d="M 45 0 c -3.974 0 -7.207 3.233 -7.207 7.207 v 55.992 c 0 3.974 3.233 7.207 7.207 7.207 c 3.974 0 7.207 -3.233 7.207 -7.207 V 7.207 C 52.207 3.233 48.974 0 45 0 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                <circle cx="44.997" cy="82.797" r="7.207" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+                            </g>
+                        </svg>
+                        Terdapat Data Yang Salah! Tidak Dapat Kirim Ke Wasis!
+                    `);
+                    $('#submitWasis').attr('disabled',true);
+                    $('#submitWasis').removeClass('bg-gradient-info').addClass('bg-gradient-danger');
+                }
 
                 $('#submitWasis').click(function(){
                     let data_id = {{$checkWasis->id}};
@@ -3086,6 +3091,9 @@
                     });
                 })
 
+                $('#cancleBtn').click(function(){
+                    window.location.href = '/historyinput'
+                });
             });
         </script>
     </main>

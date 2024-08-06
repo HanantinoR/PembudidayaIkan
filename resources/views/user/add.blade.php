@@ -42,8 +42,7 @@
                                         <div class="input-group mb-3">
                                             <select class="" name="roleMember" id="roleMember" style="width:100%; padding:2px">
                                                 <option></option>
-                                                <option value="Karyawan">Karyawan</option>
-                                                <option value="User">User</option>
+                                                <option value="Admin">Admin</option>
                                                 <option value="Surveyor">Surveyor</option>
                                             </select>
                                         </div>
@@ -95,7 +94,7 @@
         });
 
         $('#cancelBtn').click(function(){
-            window.location.href = '/usermanagement'
+            window.location.href = '/management'
         });
 
         $('#saveBtn').click(function(){

@@ -365,7 +365,7 @@
                                             <label>Pendapatan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="pendapatan" name="pendapatan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your pendapatan" value="{{$dataWasis->inCome}}" aria-label="Pendapatan"
+                                                    placeholder="Enter your pendapatan" value="{{$dataWasis->income}}" aria-label="Pendapatan"
                                                     aria-describedby="pendapatan-addon">
                                                 @error('pendapatan')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -409,7 +409,7 @@
                                             <label>Harga Pakan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="harga_pakan" name="harga_pakan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Harga Pakan" value="{{$dataWasis->feedPrice}}" aria-label="Harga Pakan"
+                                                    placeholder="Enter your Harga Pakan" value="{{$dataWasis->feed_price}}" aria-label="Harga Pakan"
                                                     aria-describedby="harga_pakan-addon">
                                                 @error('harga_pakan')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -420,7 +420,7 @@
                                             <label>Biaya Pakan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_pakan" name="biaya_pakan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Pakan" value="{{$dataWasis->feedCost}}" aria-label="Biaya_pakan"
+                                                    placeholder="Enter your Biaya Pakan" value="{{$dataWasis->feed_cost}}" aria-label="Biaya_pakan"
                                                     aria-describedby="biaya_pakan-addon">
                                                 @error('biaya_pakan')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -475,7 +475,7 @@
                                             <label>Jumlah TK</label>
                                             <div class="mb-3">
                                                 <input type="text" id="jumlah_tk" name="jumlah_tk" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Jumlah TK" value="{{$dataWasis->totalTk}}" aria-label="Jumlah TK"
+                                                    placeholder="Enter your Jumlah TK" value="{{$dataWasis->total_tk}}" aria-label="Jumlah TK"
                                                     aria-describedby="jumlah_tk-addon">
                                                 @error('jumlah_tk')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -519,7 +519,7 @@
                                             <label>Biaya Pembuatan Media Pemeliharaan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_pembuatan_media_pemeliharaan" name="biaya_pembuatan_media_pemeliharaan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Pembuatan Media Pemeliharaan" value="{{$dataWasis->costMaintenanceMedia}}" aria-label="Biaya Pembuatan Media Pemeliharaan"
+                                                    placeholder="Enter your Biaya Pembuatan Media Pemeliharaan" value="{{$dataWasis->cost_maintenance_media}}" aria-label="Biaya Pembuatan Media Pemeliharaan"
                                                     aria-describedby="biaya_pembuatan_media_pemeliharaan-addon">
                                                 @error('biaya_pembuatan_media_pemeliharaan')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -530,7 +530,7 @@
                                             <label>Biaya Pembelian Peralatan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_pembelian_peralatan" name="biaya_pembelian_peralatan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Pembelian Peralatan" value="{{$dataWasis->costPurchaseTools}}}" aria-label="Biaya Pembelian Peralatan"
+                                                    placeholder="Enter your Biaya Pembelian Peralatan" value="{{$dataWasis->cost_purchase_tools}}}" aria-label="Biaya Pembelian Peralatan"
                                                     aria-describedby="biaya_pembelian_peralatan-addon">
                                                 @error('biaya_pembelian_peralatan')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -541,7 +541,7 @@
                                             <label>Biaya Penyusutan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_penyusutan" name="biaya_penyusutan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Penyusutan" value="{{$dataWasis->biayaPenyusutan}}" aria-label="Biaya Penyusutan"
+                                                    placeholder="Enter your Biaya Penyusutan" value="{{$dataWasis->biaya_penyusutan}}" aria-label="Biaya Penyusutan"
                                                     aria-describedby="biaya_penyusutan-addon">
                                                 @error('biaya_penyusutan')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -552,7 +552,7 @@
                                             <label>Biaya Tenaga Kerja</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_tenaga_kerja" name="biaya_tenaga_kerja" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Tenaga Kerja" value="{{$dataWasis->biayaTengaKerja}}" aria-label="Biaya Tenaga Kerja"
+                                                    placeholder="Enter your Biaya Tenaga Kerja" value="{{$dataWasis->biaya_tenga_kerja}}" aria-label="Biaya Tenaga Kerja"
                                                     aria-describedby="biaya_tenaga_kerja-addon">
                                                 @error('biaya_tenaga_kerja')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -585,7 +585,7 @@
                                             <label>Green Belt</label>
                                             <div class="mb-3">
                                                 <input type="text" id="green_belt" name="green_belt" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Green Belt" value="{{$dataWasis->greenBelt}}" aria-label="Green Belt"
+                                                    placeholder="Enter your Green Belt" value="{{$dataWasis->green_belt}}" aria-label="Green Belt"
                                                     aria-describedby="green_belt-addon">
                                                 @error('green_belt')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -596,7 +596,7 @@
                                             <label>Jarak ke Bibir Pantai</label>
                                             <div class="mb-3">
                                                 <input type="text" id="jarak_ke_bibir_pantai" name="jarak_ke_bibir_pantai" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Jarak ke Bibir Pantai" value="{{$dataWasis->jarakPantai}}" aria-label="Jarak ke Bibir Pantai"
+                                                    placeholder="Enter your Jarak ke Bibir Pantai" value="{{$dataWasis->jarak_pantai}}" aria-label="Jarak ke Bibir Pantai"
                                                     aria-describedby="jarak_ke_bibir_pantai-addon">
                                                 @error('jarak_ke_bibir_pantai')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -607,7 +607,7 @@
                                             <label>Sumber Air</label>
                                             <div class="mb-3">
                                                 <input type="text" id="sumber_air" name="sumber_air" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Sumber Air" value="{{$dataWasis->sumberAir}}" aria-label="Sumber Air"
+                                                    placeholder="Enter your Sumber Air" value="{{$dataWasis->sumber_air}}" aria-label="Sumber Air"
                                                     aria-describedby="sumber_air-addon">
                                                 @error('sumber_air')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -618,7 +618,7 @@
                                             <label>Status Izin</label>
                                             <div class="mb-3">
                                                 <input type="text" id="status_izin" name="status_izin" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Status Izin" value="{{$dataWasis->statusIzin}}" aria-label="Status Izin"
+                                                    placeholder="Enter your Status Izin" value="{{$dataWasis->status_izin}}" aria-label="Status Izin"
                                                     aria-describedby="status_izin-addon">
                                                 @error('status_izin')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -629,7 +629,7 @@
                                             <label>Status NIB</label>
                                             <div class="mb-3">
                                                 <input type="text" id="status_nib" name="status_nib" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Status NIB" value="{{$dataWasis->statusNib}}" aria-label="Status NIB"
+                                                    placeholder="Enter your Status NIB" value="{{$dataWasis->status_nib}}" aria-label="Status NIB"
                                                     aria-describedby="status_nib-addon">
                                                 @error('status_nib')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -640,7 +640,7 @@
                                             <label>Skala Usaha</label>
                                             <div class="mb-3">
                                                 <input type="text" id="skala_usaha" name="skala_usaha" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Skala Usaha" value="{{$dataWasis->skalaUsaha}}" aria-label="Skala Usaha"
+                                                    placeholder="Enter your Skala Usaha" value="{{$dataWasis->skala_usaha}}" aria-label="Skala Usaha"
                                                     aria-describedby="skala_usaha-addon">
                                                 @error('skala_usaha')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -684,7 +684,7 @@
                                             <label>Dukungan Pemda</label>
                                             <div class="mb-3">
                                                 <input type="text" id="dukungan_pemda" name="dukungan_pemda" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Dukungan Pemda" value="{{$dataWasis->dukunganPemda}}" aria-label="Dukungan Pemda"
+                                                    placeholder="Enter your Dukungan Pemda" value="{{$dataWasis->dukungan_pemda}}" aria-label="Dukungan Pemda"
                                                     aria-describedby="dukungan_pemda-addon">
                                                 @error('dukungan_pemda')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -695,7 +695,7 @@
                                             <label>Dukungan Pusat</label>
                                             <div class="mb-3">
                                                 <input type="text" id="dukungan_pusat" name="dukungan_pusat" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Dukungan Pusat" value="{{$dataWasis->dukunganPusat}}" aria-label="Dukungan Pusat"
+                                                    placeholder="Enter your Dukungan Pusat" value="{{$dataWasis->dukungan_pusat}}" aria-label="Dukungan Pusat"
                                                     aria-describedby="dukungan_pusat-addon">
                                                 @error('dukungan_pusat')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -706,7 +706,7 @@
                                             <label>Nama Penyuluh</label>
                                             <div class="mb-3">
                                                 <input type="text" id="nama_penyuluh" name="nama_penyuluh" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Nama Penyuluh" value="{{$dataWasis->namaPenyuluh}}" aria-label="Nama Penyuluh"
+                                                    placeholder="Enter your Nama Penyuluh" value="{{$dataWasis->nama_penyuluh}}" aria-label="Nama Penyuluh"
                                                     aria-describedby="nama_penyuluh-addon">
                                                 @error('nama_penyuluh')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -728,7 +728,7 @@
                                             <label>Nama Petugas</label>
                                             <div class="mb-3">
                                                 <input type="text" id="nama_petugas" name="nama_petugas" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Nama Petugas" value="{{$dataWasis->namaPetugas}}" aria-label="Nama Petugas"
+                                                    placeholder="Enter your Nama Petugas" value="{{$dataWasis->nama_petugas}}" aria-label="Nama Petugas"
                                                     aria-describedby="nama_petugas-addon">
                                                 @error('nama_petugas')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -739,7 +739,7 @@
                                             <label>NIK Petugas</label>
                                             <div class="mb-3">
                                                 <input type="text" id="nik_petugas" name="nik_petugas" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your NIK Petugas" value="{{$dataWasis->nikPetugas}}" aria-label="NIK Petugas"
+                                                    placeholder="Enter your NIK Petugas" value="{{$dataWasis->nik_petugas}}" aria-label="NIK Petugas"
                                                     aria-describedby="nik_petugas-addon">
                                                 @error('nik_petugas')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -776,9 +776,9 @@
                                         </div>
                                         @endif
                                     </div>
-                                    <div class="row checkWasis">
+                                    <div class="row ">
                                         <div class="col">
-                                            <div class="submitField">
+                                            <div class="submitField checkWasis">
                                                 <button type="button" class="btn btn-round bg-gradient-info btn-lg w-100 mt-4 mb-0 btnSubmitEdit" id="submitEdit">
                                                     <span class="btn-inner--icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
@@ -796,11 +796,9 @@
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row detailWasis">
                                         <div class="col">
-                                            <div class="detailWasis">
-                                                <a href="{{route('historysendwasis')}}" class="btn btn-round bg-gradient-warning btn-lg w-100 mt-4 mb-0 " id="backBtn">
+                                            <div class="submitField detailWasis">
+                                                <a class="btn btn-round bg-gradient-warning btn-lg w-100 mt-4 mb-0 " id="backBtn">
                                                     <span class="btn-inner--icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -834,9 +832,15 @@
                 if('{{$state}}' == 'wasis')
                 {
                     $(":input").prop('readonly',true);
-                    $(".checkWasis").hide()
+                    $(".checkWasis").hide();
+
+                    $('#backBtn').click(function(){
+                        window.location.href = '/historysent'
+                    });
                 } else {
-                    $(".detailWasis").hide()
+                    $('#backBtn').click(function(){
+                        window.location.href = '/historyinput'
+                    });
                 }
 
             });

@@ -51,7 +51,7 @@ class HistoryController extends Controller
                 return
                     '<button type="button" class="btn btn-danger" onclick="deletedata('.$datatb->id.')">
                         <span class="btn-inner--icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="me-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                             </svg>
                         </span>
@@ -59,7 +59,7 @@ class HistoryController extends Controller
                     </button>
                     <a href="'.route("history.editwasis",["state"=>"input","id" =>$datatb->id]).'" type="button" class="btn btn-warning" >
                         <span class="btn-inner--icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="me-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
                             </svg>
                         </span>
@@ -330,41 +330,41 @@ class HistoryController extends Controller
                 @$arraySurvey[$i]['productivity'],
                 @$arraySurvey[$i]['distribution'],
                 @$arraySurvey[$i]['selling_price'],
-                @$arraySurvey[$i]['inCome'],
+                @$arraySurvey[$i]['income'],
                 @$arraySurvey[$i]['feed_type'],
                 @$arraySurvey[$i]['feed_total'],
                 @$arraySurvey[$i]['source_supply'],
-                @$arraySurvey[$i]['feedPrice'],
-                @$arraySurvey[$i]['feedCost'],
+                @$arraySurvey[$i]['feed_price'],
+                @$arraySurvey[$i]['feed_cost'],
                 @$arraySurvey[$i]['sumberBenih'],
                 @$arraySurvey[$i]['totalBenih'],
                 @$arraySurvey[$i]['benihPrice'],
                 @$arraySurvey[$i]['benihCost'],
-                @$arraySurvey[$i]['totalTk'],
+                @$arraySurvey[$i]['total_tk'],
                 @$arraySurvey[$i]['modal'],
                 @$arraySurvey[$i]['sumberModal'],
                 @$arraySurvey[$i]['sumberKredit'],
-                @$arraySurvey[$i]['costMaintenanceMedia'],
-                @$arraySurvey[$i]['costPurchaseTools'],
-                @$arraySurvey[$i]['biayaPenyusutan'],
-                @$arraySurvey[$i]['biayaTengaKerja'],
+                @$arraySurvey[$i]['cost_maintenance_media'],
+                @$arraySurvey[$i]['cost_purchase_tools'],
+                @$arraySurvey[$i]['biaya_penyusutan'],
+                @$arraySurvey[$i]['biaya_tenga_kerja'],
                 @$arraySurvey[$i]['ipal'],
                 @$arraySurvey[$i]['tandon'],
-                @$arraySurvey[$i]['greenBelt'],
-                @$arraySurvey[$i]['jarakPantai'],
-                @$arraySurvey[$i]['sumberAir'],
-                @$arraySurvey[$i]['statusIzin'],
-                @$arraySurvey[$i]['statusNib'],
-                @$arraySurvey[$i]['skalaUsaha'],
+                @$arraySurvey[$i]['green_belt'],
+                @$arraySurvey[$i]['jarak_pantai'],
+                @$arraySurvey[$i]['sumber_air'],
+                @$arraySurvey[$i]['status_izin'],
+                @$arraySurvey[$i]['status_nib'],
+                @$arraySurvey[$i]['skala_usaha'],
                 @$arraySurvey[$i]['asuransi'],
                 @$arraySurvey[$i]['bantuan'],
                 @$arraySurvey[$i]['penghargaan'],
-                @$arraySurvey[$i]['dukunganPemda'],
-                @$arraySurvey[$i]['dukunganPusat'],
-                @$arraySurvey[$i]['namaPenyuluh'],
+                @$arraySurvey[$i]['dukungan_pemda'],
+                @$arraySurvey[$i]['dukungan_pusat'],
+                @$arraySurvey[$i]['nama_penyuluh'],
                 @$arraySurvey[$i]['sertifikat'],
-                @$arraySurvey[$i]['namaPetugas'],
-                @$arraySurvey[$i]['nikPetugas'],
+                @$arraySurvey[$i]['nama_petugas'],
+                @$arraySurvey[$i]['nik_petugas'],
                 @$arraySurvey[$i]['upt'],
                 @$arraySurvey[$i]['created_by'],
                 date('Y-m-d H:i:s',strtotime(@$arraySurvey[$i]['created_at'])),
@@ -646,7 +646,7 @@ class HistoryController extends Controller
 
         //petugas
         $checkPetugas = DB::table('petugas_wasis')
-                    ->where('nama_petugas','=',strtoupper(trim($checkWasis->namaPetugas)))
+                    ->where('nama_petugas','=',strtoupper(trim($checkWasis->nama_petugas)))
                     ->where('nama_upt','=',strtoupper(trim($checkWasis->upt)))
                     ->first();
 
@@ -801,7 +801,7 @@ class HistoryController extends Controller
                                 ->first();
 
         $get_petugas = DB::table('petugas_wasis')
-                        ->where('nama_petugas','=',strtoupper(trim($data_survey->namaPetugas)))
+                        ->where('nama_petugas','=',strtoupper(trim($data_survey->nama_petugas)))
                         ->where('nama_upt','=',strtoupper(trim($data_survey->upt)))
                         ->first();
 
@@ -877,42 +877,42 @@ class HistoryController extends Controller
         $teknologi=$staticValue['teknologi'][strtoupper(trim($data_survey->tech))];
         $produksi=$data_survey->production;
         $harga=$data_survey->selling_price;
-        $tk_num=$data_survey->totalTk;
+        $tk_num=$data_survey->total_tk;
         $omzet=$data_survey->modal;
         $sumber_modal=@$staticValue['sumber_modal'][strtoupper(trim($data_survey->sumberModal))];
         $ipal=$staticValue['ada_tidak'][strtoupper(trim($data_survey->ipal))];
         $tandon=@$staticValue['ada_tidak'][strtoupper(trim($data_survey->tandon))];
-        $greenbelt=@$staticValue['ada_tidak'][strtoupper(trim($data_survey->greenBelt))];
+        $green_belt=@$staticValue['ada_tidak'][strtoupper(trim($data_survey->green_belt))];
         $bantuan=@$staticValue['bantuan'][strtoupper(trim($data_survey->bantuan))];
         $penghargaan=@$staticValue['ada_tidak'][strtoupper(trim($data_survey->penghargaan))];
-        $dukungan_pemda=$staticValue['dukungan_pemda'][strtoupper(trim($data_survey->dukunganPemda))];
-        $dukungan_pusat=$staticValue['dukungan_pusat'][strtoupper(trim($data_survey->dukunganPusat))];
+        $dukungan_pemda=$staticValue['dukungan_pemda'][strtoupper(trim($data_survey->dukungan_pemda))];
+        $dukungan_pusat=$staticValue['dukungan_pusat'][strtoupper(trim($data_survey->dukungan_pusat))];
         $sertifikat=$staticValue['sertifikat'][strtoupper(trim($data_survey->sertifikat))];
-        $penyuluh_name=(strtoupper(trim($data_survey->namaPenyuluh)) == 'NULL') ? '' : strtoupper(trim($data_survey->namaPenyuluh));
+        $penyuluh_name=(strtoupper(trim($data_survey->nama_penyuluh)) == 'NULL') ? '' : strtoupper(trim($data_survey->nama_penyuluh));
         $petugas_id=@$get_petugas->id_petugas;
         $upt_id=@$get_petugas->id_upt;
         $address=strtoupper(trim($data_survey->address));
         $pakan_jenis=$staticValue['jenis_pakan'][strtoupper(trim($data_survey->feed_type))];
         $pakan_num=$data_survey->feed_total;
         $pakan_sumber='';
-        $pakan_harga=$data_survey->feedPrice;
+        $pakan_harga=$data_survey->feed_price;
         $benur_sumber='';
         $benur_num=$data_survey->totalBenih;
         $benur_harga=$data_survey->benihPrice;
-        $jarak_tambak=(trim($data_survey->jarakPantai) == 0) ? '' : $data_survey->jarakPantai;
-        $sumber_air=strtoupper(trim($data_survey->sumberAir));
-        $izin=@$staticValue['perizinan'][strtoupper(trim($data_survey->statusIzin))];
-        $nib=@$staticValue['ada_tidak'][strtoupper(trim($data_survey->statusNib))];
+        $jarak_tambak=(trim($data_survey->jarak_pantai) == 0) ? '' : $data_survey->jarak_pantai;
+        $sumber_air=strtoupper(trim($data_survey->sumber_air));
+        $izin=@$staticValue['perizinan'][strtoupper(trim($data_survey->status_izin))];
+        $nib=@$staticValue['ada_tidak'][strtoupper(trim($data_survey->status_nib))];
         $sumber_kredit=@$staticValue['sumber_kredit'][strtoupper(trim($data_survey->sumberKredit))];
-        $skala_usaha=@$staticValue['skala_usaha'][strtoupper(trim($data_survey->skalaUsaha))];
+        $skala_usaha=@$staticValue['skala_usaha'][strtoupper(trim($data_survey->skala_usaha))];
         $asuransi=@$staticValue['asuransi'][strtoupper(trim($data_survey->asuransi))];
         $status_kusuka=@$staticValue['status_kusuka'][strtoupper(trim($data_survey->kusuka_status))];
         $family_num=$data_survey->total_family;
-        $biaya_media=$data_survey->costMaintenanceMedia;
-        $biaya_susut=$data_survey->biayaPenyusutan;
-        $biaya_tk=$data_survey->biayaTengaKerja;
-        $income=$data_survey->inCome;
-        $biaya_pakan=$data_survey->feedCost;
+        $biaya_media=$data_survey->cost_maintenance_media;
+        $biaya_susut=$data_survey->biaya_penyusutan;
+        $biaya_tk=$data_survey->biaya_tenga_kerja;
+        $income=$data_survey->income;
+        $biaya_pakan=$data_survey->feed_cost;
         $biaya_benih=$data_survey->benihCost;
         $image=(DB::table('presensi')->where('nik_user_input','=',$nik)->orderBy('created_at','DESC')->value('foto_in') == null) ? '' : url(Storage::url("/uploads/absensi/".DB::table('presensi')->where('nik_user_input','=',$nik)->orderBy('created_at','DESC')->value('foto_in')));
         $photo='';
@@ -946,7 +946,7 @@ class HistoryController extends Controller
                 '&sumber_modal='.rawurlencode($sumber_modal).
                 '&ipal='.rawurlencode($ipal).
                 '&tandon='.rawurlencode($tandon).
-                '&greenbelt='.rawurlencode($greenbelt).
+                '&green_belt='.rawurlencode($green_belt).
                 '&bantuan='.rawurlencode($bantuan).
                 '&penghargaan='.rawurlencode($penghargaan).
                 '&dukungan_pemda='.rawurlencode($dukungan_pemda).
@@ -1072,7 +1072,7 @@ class HistoryController extends Controller
                                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
                             </svg>
                         </span>
-                        <span class="btn-inner--text">Edit Data</span>
+                        <span class="btn-inner--text">Detail Data</span>
                     </a>';
         })
         ->rawColumns(['foto','status_wasis','aksi'])

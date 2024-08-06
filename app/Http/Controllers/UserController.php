@@ -26,10 +26,10 @@ class UserController extends Controller
         ->addColumn('aksi' , function($datatb){
             return
             '<button type="button" class="btn btn-danger" onclick="deletedata('.$datatb->id.')">
-                <i class="fas fa-trash" aria-hidden="true"></i>
+                <i class="fas fa-solid fa-trash"></i>test
             </button>
             <a type="button" class="btn btn-blur btn-icon align-items-center detailUser" data-id='.$datatb->id.' data-bs-toggle="modal" data-bs-target="#modal-form">
-                <i class="fas fa-user-edit" aria-hidden="true"></i>
+                <i class="fas fa-user-edit" aria-hidden="true"></i>tis
             </a>';
         })
         ->rawColumns(['aksi'])
