@@ -1628,9 +1628,9 @@
                                             <label>Sumber Benih</label>
                                             <div class="mb-3">
                                                 <input type="text" id="sumber_benih" name="sumber_benih" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Sumber Benih" value="{{$checkWasis->sumberBenih}}" aria-label="Sumber Benih"
+                                                    placeholder="Enter your Sumber Benih" value="{{$checkWasis->sumber_benih}}" aria-label="Sumber Benih"
                                                     aria-describedby="sumber_benih-addon" readonly>
-                                                @if($checkWasis->sumberBenih == null || $checkWasis->sumberBenih == "null")
+                                                @if($checkWasis->sumber_benih == null || $checkWasis->sumber_benih == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1654,7 +1654,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->sumberBenih}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->sumber_benih}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">
@@ -1678,9 +1678,9 @@
                                             <label>Jumlah Benih</label>
                                             <div class="mb-3">
                                                 <input type="text" id="jumlah_benih" name="jumlah_benih" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Jumlah Benih" value="{{$checkWasis->totalBenih }}" aria-label="Jumlah Benih"
+                                                    placeholder="Enter your Jumlah Benih" value="{{$checkWasis->total_benih }}" aria-label="Jumlah Benih"
                                                     aria-describedby="jumlah_benih-addon" readonly>
-                                                @if($checkWasis->totalBenih == null || $checkWasis->totalBenih == "null")
+                                                @if($checkWasis->total_benih == null || $checkWasis->total_benih == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1715,9 +1715,9 @@
                                             <label>Harga Benih</label>
                                             <div class="mb-3">
                                                 <input type="text" id="harga_benih" name="harga_benih" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Harga Benih" value="{{$checkWasis->benihPrice}}" aria-label="Harga Benih"
+                                                    placeholder="Enter your Harga Benih" value="{{$checkWasis->benih_price}}" aria-label="Harga Benih"
                                                     aria-describedby="harga_benih-addon" readonly>
-                                                @if($checkWasis->benihPrice == null || $checkWasis->benihPrice == "null")
+                                                @if($checkWasis->benih_price == null || $checkWasis->benih_price == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1752,9 +1752,9 @@
                                             <label>Biaya Benih</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_benih" name="biaya_benih" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Benih" value="{{$checkWasis->benihCost}}" aria-label="Biaya Benih"
+                                                    placeholder="Enter your Biaya Benih" value="{{$checkWasis->benih_cost}}" aria-label="Biaya Benih"
                                                     aria-describedby="biaya_benih-addon" readonly>
-                                                @if($checkWasis->benihCost == null || $checkWasis->benihCost == "null")
+                                                @if($checkWasis->benih_cost == null || $checkWasis->benih_cost == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1863,9 +1863,9 @@
                                             <label>Sumber Modal</label>
                                             <div class="mb-3">
                                                 <input type="text" id="sumber_modal" name="sumber_modal" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Sumber Modal" value="{{$checkWasis->sumberModal}}" aria-label="Sumber Modal"
+                                                    placeholder="Enter your Sumber Modal" value="{{$checkWasis->sumber_modal}}" aria-label="Sumber Modal"
                                                     aria-describedby="sumber_modal-addon" readonly>
-                                                @if($checkWasis->sumberModal == null || $checkWasis->sumberModal == "null")
+                                                @if($checkWasis->sumber_modal == null || $checkWasis->sumber_modal == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1878,7 +1878,7 @@
                                                         </svg>
                                                         <strong> Data Sumber Modal Tidak Lengkap</strong>
                                                     </div>
-                                                @elseif(isset($staticValue['sumber_modal'][strtoupper($checkWasis->sumberModal)]) == false)
+                                                @elseif(isset($staticValue['sumber_modal'][strtoupper($checkWasis->sumber_modal)]) == false)
                                                     <div class="alert alert-warning">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class=" me-2">
                                                             <defs>
@@ -1889,7 +1889,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->sumberModal}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->sumber_modal}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">
@@ -1913,9 +1913,9 @@
                                             <label>Sumber Kredit</label>
                                             <div class="mb-3">
                                                 <input type="text" id="sumber_kredit" name="sumber_kredit" class="p-3 mb-2 form-control mb-2"
-                                                    placeholder="Enter your Sumber Kredit" value="{{$checkWasis->sumberKredit}}" aria-label="Sumber Kredit"
+                                                    placeholder="Enter your Sumber Kredit" value="{{$checkWasis->sumber_kredit}}" aria-label="Sumber Kredit"
                                                     aria-describedby="sumber_kredit-addon" readonly>
-                                                @if($checkWasis->sumberKredit == null || $checkWasis->sumberKredit == "null")
+                                                @if($checkWasis->sumber_kredit == null || $checkWasis->sumber_kredit == "null")
                                                     <div class="alert alert-danger">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class="me-2">
                                                             <defs>
@@ -1928,7 +1928,7 @@
                                                         </svg>
                                                         <strong> Data Sumber Kredit Tidak Lengkap</strong>
                                                     </div>
-                                                @elseif(isset($staticValue['sumber_kredit'][strtoupper($checkWasis->sumberKredit)]) == false)
+                                                @elseif(isset($staticValue['sumber_kredit'][strtoupper($checkWasis->sumber_kredit)]) == false)
                                                     <div class="alert alert-warning">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 256 256" xml:space="preserve" class=" me-2">
                                                             <defs>
@@ -1939,7 +1939,7 @@
                                                                 <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z M 45 6 C 23.495 6 6 23.495 6 45 s 17.495 39 39 39 s 39 -17.495 39 -39 S 66.505 6 45 6 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255, 136, 0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                                                             </g>
                                                             </svg>
-                                                        <strong> Data {{$checkWasis->sumberModal}} Tidak Ditemukan di Database Wasis</strong>
+                                                        <strong> Data {{$checkWasis->sumber_modal}} Tidak Ditemukan di Database Wasis</strong>
                                                     </div>
                                                 @else
                                                     <div class="alert alert-success">

@@ -15,7 +15,7 @@
                             </div>
                         </div>
                         <div class="card-body ">
-                            <form action="">
+                            <form action="" id="editWasis">
                                 @csrf
                                 <div class="div">
                                     <div class="row">
@@ -44,7 +44,7 @@
                                         <div class="col-md-6 col-sm-6 col-12">
                                             <label>Tanggal Lahir</label>
                                             <div class="mb-3">
-                                                <input type="text" id="tanggal_lahir" name="tanggal_lahir" class="p-3 mb-2 form-control"
+                                                <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="p-3 mb-2 form-control"
                                                     placeholder="Enter your Tanggal Lahir" value="{{$dataWasis->bod}}" aria-label="Tanggal Lahir"
                                                     aria-describedby="tanggal_lahir-addon">
                                                 @error('bod')
@@ -431,7 +431,7 @@
                                             <label>Sumber Benih</label>
                                             <div class="mb-3">
                                                 <input type="text" id="sumber_benih" name="sumber_benih" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Sumber Benih" value="{{$dataWasis->sumberBenih}}" aria-label="Sumber Benih"
+                                                    placeholder="Enter your Sumber Benih" value="{{$dataWasis->sumber_benih}}" aria-label="Sumber Benih"
                                                     aria-describedby="sumber_benih-addon">
                                                 @error('sumber_benih')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -442,7 +442,7 @@
                                             <label>Jumlah Benih</label>
                                             <div class="mb-3">
                                                 <input type="text" id="jumlah_benih" name="jumlah_benih" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Jumlah Benih" value="{{$dataWasis->totalBenih }}" aria-label="Jumlah Benih"
+                                                    placeholder="Enter your Jumlah Benih" value="{{$dataWasis->total_benih }}" aria-label="Jumlah Benih"
                                                     aria-describedby="jumlah_benih-addon">
                                                 @error('jumlah_benih')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -453,7 +453,7 @@
                                             <label>Harga Benih</label>
                                             <div class="mb-3">
                                                 <input type="text" id="harga_benih" name="harga_benih" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Harga Benih" value="{{$dataWasis->benihPrice}}" aria-label="Harga Benih"
+                                                    placeholder="Enter your Harga Benih" value="{{$dataWasis->benih_price}}" aria-label="Harga Benih"
                                                     aria-describedby="harga_benih-addon">
                                                 @error('harga_benih')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -464,7 +464,7 @@
                                             <label>Biaya Benih</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_benih" name="biaya_benih" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Benih" value="{{$dataWasis->benihCost}}" aria-label="Biaya Benih"
+                                                    placeholder="Enter your Biaya Benih" value="{{$dataWasis->benih_cost}}" aria-label="Biaya Benih"
                                                     aria-describedby="biaya_benih-addon">
                                                 @error('biaya_benih')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -497,7 +497,7 @@
                                             <label>Sumber Modal</label>
                                             <div class="mb-3">
                                                 <input type="text" id="sumber_modal" name="sumber_modal" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Sumber Modal" value="{{$dataWasis->sumberModal}}" aria-label="Sumber Modal"
+                                                    placeholder="Enter your Sumber Modal" value="{{$dataWasis->sumber_modal}}" aria-label="Sumber Modal"
                                                     aria-describedby="sumber_modal-addon">
                                                 @error('sumber_modal')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -508,7 +508,7 @@
                                             <label>Sumber Kredit</label>
                                             <div class="mb-3">
                                                 <input type="text" id="sumber_kredit" name="sumber_kredit" class="p-3 mb-2 form-control mb-2"
-                                                    placeholder="Enter your Sumber Kredit" value="{{$dataWasis->sumberKredit}}" aria-label="Sumber Kredit"
+                                                    placeholder="Enter your Sumber Kredit" value="{{$dataWasis->sumber_kredit}}" aria-label="Sumber Kredit"
                                                     aria-describedby="sumber_kredit-addon">
                                                 @error('sumber_kredit')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -530,7 +530,7 @@
                                             <label>Biaya Pembelian Peralatan</label>
                                             <div class="mb-3">
                                                 <input type="text" id="biaya_pembelian_peralatan" name="biaya_pembelian_peralatan" class="p-3 mb-2 form-control"
-                                                    placeholder="Enter your Biaya Pembelian Peralatan" value="{{$dataWasis->cost_purchase_tools}}}" aria-label="Biaya Pembelian Peralatan"
+                                                    placeholder="Enter your Biaya Pembelian Peralatan" value="{{$dataWasis->cost_purchase_tools}}" aria-label="Biaya Pembelian Peralatan"
                                                     aria-describedby="biaya_pembelian_peralatan-addon">
                                                 @error('biaya_pembelian_peralatan')
                                                     <span class="text-danger text-sm">{{ $message }}</span>
@@ -842,6 +842,45 @@
                         window.location.href = '/historyinput'
                     });
                 }
+
+                $('#submitEdit').click(function(){
+                    let id = {{$dataWasis->id}};
+                    console.log(id);
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('input[name="_token"]').val()
+                        },
+                        method:'POST',
+                        url : "{{ route('editwasis.save',['id'=>':id']) }}".replace(':id',id),
+                        data: $('#editWasis').serialize(),
+                        cache : false,
+                        beforeSend:function(){
+                            swal.fire({
+                                title: "Mohon Menunggu",
+                                text: "Proses Sedang Berjalan...",
+                                allowOutsideClick: false,
+                                allowEscapeKey: false,
+                                allowEnterKey: false,
+                                showConfirmButton: false,
+                                showCancelButton: false,
+                                onOpen: () => {
+                                    Swal.showLoading();
+                                }
+                            });
+                        },
+                        success:function(res){
+                            swal.fire({
+                                title: "Good job!~",
+                                text: "Data anda sudah berhasil dirubah!",
+                                icon: "success",
+                            }).then((result) => {
+                                if(result.isConfirmed) {
+                                    location.reload();
+                                }
+                            });
+                        }
+                    });
+                });
 
             });
         </script>

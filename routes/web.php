@@ -27,7 +27,7 @@ Route::get('/',function(){
 });
 
 Route::group(['middleware'=> 'auth'],function(){
-    Route::group(['middleware' => 'role:=Surveyor,Admin'],function(){
+    Route::group(['middleware' => 'role:Surveyor,Admin'],function(){
 
         //Dashboard Menu
         Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
@@ -48,6 +48,7 @@ Route::group(['middleware'=> 'auth'],function(){
         Route::get('/historyinput/checkwasis/check/{id}',[HistoryController::class,'getIndexCheckWasis'])->name('history.checkwasis');
         Route::post('/historyinput/checkwasis/send/{id}',[HistoryController::class,'sendWasis'])->name('history.sendwasis');
         Route::get('/historyinput/checkwasis/edit/{state}/{id}',[HistoryController::class,'getIndexEditWasis'])->name('history.editwasis');
+        Route::post('/historyinput/checkwasis/save/{id}', [HistoryController::class,'saveEditWasis'])->name('editwasis.save');
         //-----List Data History Wasis
         Route::post('/historywasis/getdatawasis',[HistoryController::class,'getDataWasis'])->name('historywasis.listdata');
 

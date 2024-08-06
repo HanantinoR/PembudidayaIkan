@@ -449,20 +449,20 @@
                                             res[index]['feed_cost'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="sumberBenih[]" name="sumberBenih[]">' +
-                                            res[index]['sumberBenih'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="sumber_benih[]" name="sumber_benih[]">' +
+                                            res[index]['sumber_benih'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="totalBenih[]" name="totalBenih[]">' +
-                                            res[index]['totalBenih'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="total_benih[]" name="total_benih[]">' +
+                                            res[index]['total_benih'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="benihPrice[]" name="benihPrice[]">' +
-                                            res[index]['benihPrice'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="benih_price[]" name="benih_price[]">' +
+                                            res[index]['benih_price'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="benihCost[]" name="benihCost[]">' +
-                                            res[index]['benihCost'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="benih_cost[]" name="benih_cost[]">' +
+                                            res[index]['benih_cost'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
                                             '<textarea required class="form form-control" id="total_tk[]" name="total_tk[]">' +
@@ -473,12 +473,12 @@
                                             res[index]['modal'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="sumberModal[]" name="sumberModal[]">' +
-                                            res[index]['sumberModal'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="sumber_modal[]" name="sumber_modal[]">' +
+                                            res[index]['sumber_modal'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
-                                            '<textarea required class="form form-control" id="sumberKredit[]" name="sumberKredit[]">' +
-                                            res[index]['sumberKredit'] +'</textarea>' +
+                                            '<textarea required class="form form-control" id="sumber_kredit[]" name="sumber_kredit[]">' +
+                                            res[index]['sumber_kredit'] +'</textarea>' +
                                         '</td>'+
                                         '<td>'+
                                             '<textarea required class="form form-control" id="cost_maintenance_media[]" name="cost_maintenance_media[]">' +

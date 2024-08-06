@@ -114,6 +114,7 @@ class HistoryController extends Controller
         ->addIndexColumn()
         ->make(true);
     }
+
     public function getAllData()
     {
         if(Auth::user()->role == "Admin"){
@@ -336,14 +337,14 @@ class HistoryController extends Controller
                 @$arraySurvey[$i]['source_supply'],
                 @$arraySurvey[$i]['feed_price'],
                 @$arraySurvey[$i]['feed_cost'],
-                @$arraySurvey[$i]['sumberBenih'],
-                @$arraySurvey[$i]['totalBenih'],
-                @$arraySurvey[$i]['benihPrice'],
-                @$arraySurvey[$i]['benihCost'],
+                @$arraySurvey[$i]['sumber_benih'],
+                @$arraySurvey[$i]['total_benih'],
+                @$arraySurvey[$i]['benih_price'],
+                @$arraySurvey[$i]['benih_cost'],
                 @$arraySurvey[$i]['total_tk'],
                 @$arraySurvey[$i]['modal'],
-                @$arraySurvey[$i]['sumberModal'],
-                @$arraySurvey[$i]['sumberKredit'],
+                @$arraySurvey[$i]['sumber_modal'],
+                @$arraySurvey[$i]['sumber_kredit'],
                 @$arraySurvey[$i]['cost_maintenance_media'],
                 @$arraySurvey[$i]['cost_purchase_tools'],
                 @$arraySurvey[$i]['biaya_penyusutan'],
@@ -416,7 +417,8 @@ class HistoryController extends Controller
         ],200);
     }
 
-    function deleteData(){
+    function deleteData()
+    {
         $id = $_POST['id'];
         DB::table('survey')->where('id','=',$id)->delete();
         return 0;
@@ -626,7 +628,7 @@ class HistoryController extends Controller
         }
 
         //sumber benih
-        $daerah_benih = explode(",",$checkWasis->sumberBenih);
+        $daerah_benih = explode(",",$checkWasis->sumber_benih);
 
         foreach ($daerah_benih as $key => $value) {
             $daerah_benih[$key] = strtoupper(trim($value));
@@ -659,6 +661,7 @@ class HistoryController extends Controller
 
         return view('history.checkwasis',compact('data','checkWasis', 'staticValue','lokasi','komoditas','distribusi','supply','sumber_benih','petugas'));
     }
+
     //-- kirim wasis
     function sendWasis(Request $request,$id)
     {
@@ -837,7 +840,7 @@ class HistoryController extends Controller
             ${"kab_id".$i+1} = (isset($get_kabupaten_distribusi[$i]->id_kabupaten) == true) ? $get_kabupaten_distribusi[$i]->id_kabupaten : '';
         }
 
-        $nama_daerah_sumber_benih = explode(",",$data_survey->sumberBenih);
+        $nama_daerah_sumber_benih = explode(",",$data_survey->sumber_benih);
 
         foreach ($nama_daerah_sumber_benih as $key => $value) {
             $nama_daerah_sumber_benih[$key] = strtoupper(trim($value));
@@ -879,7 +882,7 @@ class HistoryController extends Controller
         $harga=$data_survey->selling_price;
         $tk_num=$data_survey->total_tk;
         $omzet=$data_survey->modal;
-        $sumber_modal=@$staticValue['sumber_modal'][strtoupper(trim($data_survey->sumberModal))];
+        $sumber_modal=@$staticValue['sumber_modal'][strtoupper(trim($data_survey->sumber_modal))];
         $ipal=$staticValue['ada_tidak'][strtoupper(trim($data_survey->ipal))];
         $tandon=@$staticValue['ada_tidak'][strtoupper(trim($data_survey->tandon))];
         $green_belt=@$staticValue['ada_tidak'][strtoupper(trim($data_survey->green_belt))];
@@ -897,13 +900,13 @@ class HistoryController extends Controller
         $pakan_sumber='';
         $pakan_harga=$data_survey->feed_price;
         $benur_sumber='';
-        $benur_num=$data_survey->totalBenih;
-        $benur_harga=$data_survey->benihPrice;
+        $benur_num=$data_survey->total_benih;
+        $benur_harga=$data_survey->benih_price;
         $jarak_tambak=(trim($data_survey->jarak_pantai) == 0) ? '' : $data_survey->jarak_pantai;
         $sumber_air=strtoupper(trim($data_survey->sumber_air));
         $izin=@$staticValue['perizinan'][strtoupper(trim($data_survey->status_izin))];
         $nib=@$staticValue['ada_tidak'][strtoupper(trim($data_survey->status_nib))];
-        $sumber_kredit=@$staticValue['sumber_kredit'][strtoupper(trim($data_survey->sumberKredit))];
+        $sumber_kredit=@$staticValue['sumber_kredit'][strtoupper(trim($data_survey->sumber_kredit))];
         $skala_usaha=@$staticValue['skala_usaha'][strtoupper(trim($data_survey->skala_usaha))];
         $asuransi=@$staticValue['asuransi'][strtoupper(trim($data_survey->asuransi))];
         $status_kusuka=@$staticValue['status_kusuka'][strtoupper(trim($data_survey->kusuka_status))];
@@ -913,7 +916,7 @@ class HistoryController extends Controller
         $biaya_tk=$data_survey->biaya_tenga_kerja;
         $income=$data_survey->income;
         $biaya_pakan=$data_survey->feed_cost;
-        $biaya_benih=$data_survey->benihCost;
+        $biaya_benih=$data_survey->benih_cost;
         $image=(DB::table('presensi')->where('nik_user_input','=',$nik)->orderBy('created_at','DESC')->value('foto_in') == null) ? '' : url(Storage::url("/uploads/absensi/".DB::table('presensi')->where('nik_user_input','=',$nik)->orderBy('created_at','DESC')->value('foto_in')));
         $photo='';
 
@@ -1020,6 +1023,7 @@ class HistoryController extends Controller
 
         return $response;
     }
+
     //HISTORY SENT WASIS
     public function getDataWasis()
     {
@@ -1092,5 +1096,85 @@ class HistoryController extends Controller
 
 
         return view('history.editwasis',compact('data','dataWasis','state','responseWasis'));
+    }
+
+    public function saveEditWasis(Request $request)
+    {
+        $dataUpdate = [
+            'name' => $request->nama,
+            'nik' => $request->nik,
+            'bod' => $request->tanggal_lahir,
+            'age' => $request->usia,
+            'religion' => $request->agama,
+            'gender' => $request->gender,
+            'education' => $request->pendidikan,
+            'total_family' => $request->anggota_keluarga,
+            'address' => $request->alamat,
+            'village' => $request->desa,
+            'district' => $request->kecamatan,
+            'city' => $request->kabupaten,
+            'province' => $request->provinsi,
+            'lat' => $request->latitude,
+            'longs' => $request->longitude,
+            'groups' => $request->kelompok,
+            'biota' => $request->biota,
+            'commodities' => $request->komoditas,
+            'business_type' => $request->jenis_usaha,
+            'kusuka_status' => $request->status_kusuka,
+            'owner_status' => $request->status_kepemilikan,
+            'area' => $request->luas_area,
+            'maintenance_media' => $request->media_pemeliharaan,
+            'padat_tebar' => $request->padat_tebar,
+            'tech' => $request->teknologi,
+            'size' => $request->ukuran,
+            'production' => $request->produksi,
+            'cycle' => $request->siklus,
+            'productivity' => $request->productivitas,
+            'distribution' => $request->distribusi,
+            'selling_price' => $request->harga_jual,
+            'income' => $request->pendapatan,
+            'feed_type' => $request->jenis_pakan,
+            'feed_total' => $request->jumlah_pakan,
+            'source_supply' => $request->sumber_supply,
+            'feed_price' => $request->harga_pakan,
+            'feed_cost' => $request->biaya_pakan,
+            'sumber_benih' => $request->sumber_benih,
+            'total_benih' => $request->jumlah_benih,
+            'benih_price' => $request->harga_benih,
+            'benih_cost' => $request->biaya_benih,
+            'total_tk' => $request->jumlah_tk,
+            'modal' => $request->modal,
+            'sumber_modal' => $request->sumber_modal,
+            'sumber_kredit' => $request->sumber_kredit,
+            'cost_maintenance_media' => $request->biaya_pembuatan_media_pemeliharaan,
+            'cost_purchase_tools' => $request->biaya_pembelian_peralatan,
+            'biaya_penyusutan' => $request->biaya_penyusutan,
+            'biaya_tenga_kerja' => $request->biaya_tenaga_kerja,
+            'ipal' => $request->ipal,
+            'tandon' => $request->tandon,
+            'green_belt' => $request->green_belt,
+            'jarak_pantai' => $request->jarak_ke_bibir_pantai,
+            'sumber_air' => $request->sumber_air,
+            'status_izin' => $request->status_izin,
+            'status_nib' => $request->status_nib,
+            'skala_usaha' => $request->skala_usaha,
+            'asuransi' => $request->asuransi,
+            'bantuan' => $request->bantuan,
+            'penghargaan' => $request->penghargaan,
+            'dukungan_pemda' => $request->dukungan_pemda,
+            'dukungan_pusat' => $request->dukungan_pusat,
+            'nama_penyuluh' => $request->nama_penyuluh,
+            'sertifikat' => $request->sertifikat,
+            'nama_petugas' => $request->nama_petugas,
+            'nik_petugas' => $request->nik_petugas,
+            'upt' => $request->upt
+        ];
+
+        // dd($dataUpdate);
+        DB::table('survey')->where('id',$request->id)->update($dataUpdate);
+
+        return response()->json([
+            'message'=> 'Data Berhasil dirubah'
+        ],200);
     }
 }
