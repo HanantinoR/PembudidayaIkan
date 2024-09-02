@@ -49,7 +49,7 @@ class DashboardController extends Controller
                 </a>';
             }else{
                 return
-                '<img src="'.url(Storage::url("/uploads/absensi/".DB::table('presensi')->where('nik_user_input','=',$datatb->nik_user_input)->value('foto_in'))).'" alt="" class="imaged w64 " style="max-width:100px">';
+                '<img src="'.url(Storage::url("/uploads/absensi/".$datatb->foto_in)).'" alt="" class="imaged w64 " style="max-width:100px">';
             }
         })
         ->rawColumns(['foto','aksi'])
