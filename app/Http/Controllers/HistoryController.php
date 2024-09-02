@@ -43,7 +43,7 @@ class HistoryController extends Controller
         if (Auth::user()->role == "Admin") {
             $query = DB::table('survey')->whereNull('response_wasis')->orderBy('created_at','DESC')->select('id','nama','nik','kelurahan','kecamatan','kota_kabupaten','provinsi','created_by','created_at','updated_by','updated_at')->get();
         }else{
-            $query = DB::table('survey')->whereNull('response_wasis')->where('created_by','=',Auth::user()->nama_lengkap)->select('id','nama','nik','kelurahan','kecamatan','kota_kabupaten','provinsi','created_by','created_at','updated_by','updated_at')->orderBy('created_at','DESC')->get();
+            $query = DB::table('survey')->whereNull('response_wasis')->where('created_by','=',Auth::user()->nama)->select('id','nama','nik','kelurahan','kecamatan','kota_kabupaten','provinsi','created_by','created_at','updated_by','updated_at')->orderBy('created_at','DESC')->get();
         }
 
         return Datatables::of($query)
@@ -129,7 +129,7 @@ class HistoryController extends Controller
         if(Auth::user()->role == "Admin"){
             $dataSurvey = DB::table('survey')->orderBy('created_at','ASC')->get();
         }else{
-            $dataSurvey = DB::table('survey')->where('created_by','=',Auth::user()->nama_lengkap)->orderBy('created_at','ASC')->get();
+            $dataSurvey = DB::table('survey')->where('created_by','=',Auth::user()->nama)->orderBy('created_at','ASC')->get();
         }
         $arraySurvey =  json_decode(json_encode($dataSurvey), true);
         $jumlahArray = count($arraySurvey);
@@ -390,7 +390,7 @@ class HistoryController extends Controller
             $sheet->writeRow($data);
         }
 
-        $filename = 'Excel History Input '.Auth::user()->nama_lengkap.' Tanggal '.date('Y-m-d').' Jam '.date('H_i_s').'.xlsx';
+        $filename = 'Excel History Input '.Auth::user()->nama.' Tanggal '.date('Y-m-d').' Jam '.date('H_i_s').'.xlsx';
 
         $excel->save($filename);
         return Response::download($filename)->deleteFileAfterSend(true);
@@ -418,7 +418,7 @@ class HistoryController extends Controller
             'foto_in' => $fileNameFoto,
             'location_in' => $request->latitude.', '.$request->longitude,
             'created_at' => date('Y-m-d H:i:s'),
-            'created_by' => Auth::user()->name
+            'created_by' => Auth::user()->nama
         ]);
 
         return response()->json([
@@ -1039,7 +1039,7 @@ class HistoryController extends Controller
         if (Auth::user()->role == "Admin") {
             $query = DB::table('survey')->whereNotNull('response_wasis')->select('id','nama','nik','kelurahan','kecamatan','kota_kabupaten','provinsi','created_by','created_at','updated_by','updated_at','response_wasis','tanggal_kirim_wasis')->orderBy('tanggal_kirim_wasis','DESC')->get();
         }else{
-            $query = DB::table('survey')->whereNotNull('response_wasis')->select('id','nama','nik','kelurahan','kecamatan','kota_kabupaten','provinsi','created_by','created_at','updated_by','updated_at','response_wasis','tanggal_kirim_wasis')->where('created_by','=',Auth::user()->nama_lengkap)->orderBy('tanggal_kirim_wasis','DESC')->get();
+            $query = DB::table('survey')->whereNotNull('response_wasis')->select('id','nama','nik','kelurahan','kecamatan','kota_kabupaten','provinsi','created_by','created_at','updated_by','updated_at','response_wasis','tanggal_kirim_wasis')->where('created_by','=',Auth::user()->nama)->orderBy('tanggal_kirim_wasis','DESC')->get();
         }
         $query;
         return Datatables::of($query)
