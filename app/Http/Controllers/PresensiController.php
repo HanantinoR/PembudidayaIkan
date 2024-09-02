@@ -40,8 +40,8 @@ class PresensiController extends Controller
         $arrImage= $image[1];
         $images = base64_decode($arrImage);
         $path = "uploads/absensi/";
-        $file = $nama."-".$nik."-".$waktu.".png";
-        $fileName =$path.$nama."-".$nik."-".$waktu.".png";
+        $file = $waktu."_".$nik."_".$nama.".png";
+        $fileName =$path.$file;
         Storage::disk('public')->put($fileName,$images);
 
         $presensi = DB::table('presensi')->insert([
