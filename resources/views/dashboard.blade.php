@@ -136,8 +136,10 @@
         <script>
             $(document).ready(function(){
                 $('#tableDashboard').DataTable({
-                    processing: true,
-                    serverSide: true,
+                    processing:true,
+                    serverSide:true,
+                    pagination: true,
+                    responsive: true,
                     lengthMenu: [
                         10, 25, 50,
                         { label: 'All', value: -1 }
@@ -172,7 +174,7 @@
                         {
                             data: 'nama_user_input',
                             name: 'nama_user_input',
-                            orderable: true,
+                            orderable: false,
                             searchable: true,
                             render:function(data,type,row,meta){
                                 return row.nama_user_input;
@@ -191,8 +193,8 @@
                         {
                             data: 'location_in',
                             name: 'location_in',
-                            orderable: true,
-                            searchable: true,
+                            orderable: false,
+                            searchable: false,
                             render:function(data,type,row,meta){
                                 return row.location_in;
                             }
@@ -200,7 +202,7 @@
                         {
                             data: 'created_by',
                             name: 'created_by',
-                            orderable: true,
+                            orderable: false,
                             searchable: true,
                             render:function(data,type,row,meta){
                                 return row.created_by;
@@ -209,8 +211,8 @@
                         {
                             data: 'created_at',
                             name: 'created_at',
-                            orderable: true,
-                            searchable: true,
+                            orderable: false,
+                            searchable: false,
                             render:function(data,type,row,meta){
                                 return row.created_at;
                             }
