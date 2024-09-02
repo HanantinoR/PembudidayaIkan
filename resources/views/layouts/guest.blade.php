@@ -43,7 +43,7 @@
         <meta property="og:image"
             content="https://s3.amazonaws.com/creativetim_bucket/products/737/original/corporate-ui-dashboard-laravel.jpg?1695288974">
         <meta property="product:price:amount" content="FREE">
-        <meta property="product:price:currency" content="USD">
+        <meta property="product:price:currency" content="IDR">
         <meta property="product:availability" content="in Stock">
         <meta property="product:brand" content="Creative Tim">
         <meta property="product:category" content="Admin &amp; Dashboards">
@@ -52,7 +52,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>
-        Corporate UI by Creative Tim & UPDIVISION
+        Pengumpulan Data Perikanan Budidaya PT Sucofindo
     </title>
     <!--     Fonts and icons     -->
     <link

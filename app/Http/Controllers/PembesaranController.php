@@ -65,7 +65,7 @@ class PembesaranController extends Controller
             $agama =  $sheet->getCell("F{$row}")->getValue();
             $gender =  $sheet->getCell("G{$row}")->getFormattedValue();
             $pendidikan =  $sheet->getCell("H{$row}")->getValue();
-            $totalKeluarga =  ($sheet->getCell("I{$row}")->getValue() == "null") ? '0' : $sheet->getCell("I{$row}")->getValue();
+            $totalKeluarga =  ($sheet->getCell("I{$row}")->getValue() === "null") ? NULL : $sheet->getCell("I{$row}")->getValue();
             $alamat =  $sheet->getCell("J{$row}")->getValue();
             $kelurahan =  $sheet->getCell("K{$row}")->getValue();
             $kecamatan =  $sheet->getCell("L{$row}")->getValue();
@@ -222,8 +222,8 @@ class PembesaranController extends Controller
             'district' => 'required|',
             'city' => 'required|',
             'province' => 'required|',
-            // 'lat' => 'required|',
-            // 'longs' => 'required|',
+            'lat' => 'required|',
+            'longs' => 'required|',
             'groups' => 'required|',
             'biota' => 'required|',
             'commodities' => 'required|',
@@ -363,60 +363,62 @@ class PembesaranController extends Controller
 
             $checkNIK = SurveyModel::where('nik',$sanitizeNIK)->count();
 
+
             if($checkNIK >= 1)
             {
                 $flagNIK = 1;
             } else {
+
                 SurveyModel::create([
-                    'name' => $_POST['nama'][$i],
-                    'nik' => $_POST['nik'][$i],
-                    'bod' => date("Y-m-d", strtotime($_POST['bod'][$i])),
-                    'age' =>    $_POST['age'][$i],
-                    'religion'=> $_POST['religion'][$i],
+                    'nama' => $_POST['nama'][$i],
+                    'nik' => $sanitizeNIK,
+                    'tanggal_lahir' => date("Y-m-d", strtotime($_POST['bod'][$i])),
+                    'umur' =>    $_POST['age'][$i],
+                    'agama'=> $_POST['religion'][$i],
                     'gender'  => $_POST['gender'][$i],
-                    'education' => $_POST['education'][$i],
-                    'total_family' => intval($_POST['totalFamily'][$i]),
-                    'address' => $_POST['address'][$i],
-                    'village' => $_POST['village'][$i],
-                    'district'=> $_POST['district'][$i],
-                    'city'=> $_POST['city'][$i],
-                    'province'=> $_POST['province'][$i],
-                    'lat' => $_POST['lat'][$i],
-                    'longs'=> $_POST['long'][$i],
-                    'groups'   => $_POST['group'][$i],
+                    'tingkat_pendidikan' => $_POST['education'][$i],
+                    'jumlah_keluarga' => intval($_POST['totalFamily'][$i]),
+                    'alamat' => $_POST['address'][$i],
+                    'kelurahan' => $_POST['village'][$i],
+                    'kecamatan'=> $_POST['district'][$i],
+                    'kota_kabupaten'=> $_POST['city'][$i],
+                    'provinsi'=> $_POST['province'][$i],
+                    'latitude' => $_POST['lat'][$i],
+                    'longitude'=> $_POST['long'][$i],
+                    'kelompok'   => $_POST['group'][$i],
                     'biota'   => $_POST['biota'][$i],
-                    'commodities' => $_POST['commodities'][$i],
-                    'business_type'=> $_POST['businessType'][$i],
-                    'kusuka_status'=> $_POST['kusukaStatus'][$i],
-                    'owner_status' => $_POST['ownerStatus'][$i],
-                    'Area'=> $_POST['Area'][$i],
-                    'maintenance_media'  => $_POST['maintenanceMedia'][$i],
+                    'komoditas' => $_POST['commodities'][$i],
+                    'jenis_usaha'=> $_POST['businessType'][$i],
+                    'status_kusuka'=> $_POST['kusukaStatus'][$i],
+                    'status_kepemilikan' => $_POST['ownerStatus'][$i],
+                    'luas_usaha'=> $_POST['Area'][$i],
+                    'media_pemeliharaan'  => $_POST['maintenanceMedia'][$i],
                     'padat_tebar'  => $_POST['padatTebar'][$i],
-                    'tech' =>$_POST['tech'][$i],
-                    'size' =>$_POST['size'][$i],
-                    'production' => str_replace(".","",str_replace(",","",$_POST['production'][$i])),
-                    'cycle'=>$_POST['cycle'][$i],
-                    'productivity' =>$_POST['productivity'][$i],
-                    'distribution' => $_POST['distribution'][$i],
-                    'selling_price' => $_POST['sellingPrice'][$i],
-                    'income' => str_replace(".","",str_replace(",","",$_POST['income'][$i])),
-                    'feed_type' => $_POST['feedType'][$i],
-                    'feed_total' => str_replace(".","",str_replace(",","",$_POST['feedTotal'][$i])),
-                    'source_supply'=> $_POST['source_supply'][$i],
-                    'feed_price' => str_replace(".","",str_replace(",","",$_POST['feed_price'][$i])),
-                    'feed_cost' => str_replace(".","",str_replace(",","",$_POST['feed_cost'][$i])),
-                    'sumber_benih' => $_POST['sumber_benih'][$i],
-                    'total_benih' => str_replace(".","",str_replace(",","",$_POST['total_benih'][$i])),
-                    'benih_price' => str_replace(".","",str_replace(",","",$_POST['benih_price'][$i])),
-                    'benih_cost' => str_replace(".","",str_replace(",","",$_POST['benih_cost'][$i])),
-                    'total_tk' => $_POST['total_tk'][$i],
+                    'teknologi' =>$_POST['tech'][$i],
+                    'ukuran' =>$_POST['size'][$i],
+                    'produksi' => str_replace(".","",str_replace(",","",$_POST['production'][$i])),
+                    'siklus'=>$_POST['cycle'][$i],
+                    'produktivitas' =>$_POST['productivity'][$i],
+                    'kota_kabupaten_distribusi' => $_POST['distribution'][$i],
+                    'harga_jual' => $_POST['sellingPrice'][$i],
+                    'pendapatan' => str_replace(".","",str_replace(",","",$_POST['income'][$i])),
+                    'jenis_pakan' => $_POST['feedType'][$i],
+                    'jumlah_pakan' => str_replace(".","",str_replace(",","",$_POST['feedTotal'][$i])),
+                    'kota_kabupaten_sumber_pakan'=> $_POST['source_supply'][$i],
+                    'harga_pakan' => str_replace(".","",str_replace(",","",$_POST['feed_price'][$i])),
+                    'biaya_pakan' => str_replace(".","",str_replace(",","",$_POST['feed_cost'][$i])),
+                    'kota_kabupaten_sumber_benih' => $_POST['sumber_benih'][$i],
+                    'jumlah_benih' => str_replace(".","",str_replace(",","",$_POST['total_benih'][$i])),
+                    'harga_benih' => str_replace(".","",str_replace(",","",$_POST['benih_price'][$i])),
+                    'biaya_benih' => str_replace(".","",str_replace(",","",$_POST['benih_cost'][$i])),
+                    'jumlah_tenaga_kerja' => $_POST['total_tk'][$i],
                     'modal' => str_replace(".","",str_replace(",","",$_POST['modal'][$i])),
                     'sumber_modal' => $_POST['sumber_modal'][$i],
                     'sumber_kredit' => $_POST['sumber_kredit'][$i],
-                    'cost_maintenance_media' => str_replace(".","",str_replace(",","",$_POST['cost_maintenance_media'][$i])),
-                    'cost_purchase_tools' => str_replace(".","",str_replace(",","",$_POST['cost_purchase_tools'][$i])),
+                    'biaya_pembuatan_media_pemeliharaan' => str_replace(".","",str_replace(",","",$_POST['cost_maintenance_media'][$i])),
+                    'biaya_pembelian_peralatan' => str_replace(".","",str_replace(",","",$_POST['cost_purchase_tools'][$i])),
                     'biaya_penyusutan' => str_replace(".","",str_replace(",","",$_POST['biaya_penyusutan'][$i])),
-                    'biaya_tenga_kerja' => str_replace(".","",str_replace(",","",$_POST['biaya_tenga_kerja'][$i])),
+                    'biaya_tenaga_kerja' => str_replace(".","",str_replace(",","",$_POST['biaya_tenga_kerja'][$i])),
                     'ipal' => $_POST['ipal'][$i],
                     'tandon' => $_POST['tandon'][$i],
                     'green_belt' => $_POST['green_belt'][$i],
@@ -436,9 +438,9 @@ class PembesaranController extends Controller
                     'nik_petugas' => $_POST['nik_petugas'][$i],
                     'upt' => $_POST['upt'][$i],
                     'created_at'=>$waktu,
-                    'created_by'=> Auth::user()->nama_lengkap,
+                    'created_by'=> Auth::user()->nama,
                     'updated_at' =>$waktu,
-                    'updated_by'=> Auth::user()->nama_lengkap
+                    'updated_by'=> Auth::user()->nama
                 ]);
             }
         }

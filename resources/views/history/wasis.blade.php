@@ -53,14 +53,10 @@
                                                 <div class="resizable-column" style="min-width:200px;">Kabupaten / Kota </div></th>
                                             <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-7 px-1" >
                                                 <div class="resizable-column" style="min-width:200px;">Provinsi </div></th>
-                                            <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-7 px-1" >
-                                                <div class="resizable-column" style="min-width:200px;">Nama Petugas</div></th>
-                                            <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-7 px-1" >
-                                                <div class="resizable-column" style="min-width:200px;">UPT</div></th>
                                             <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-10 px-1">
-                                                <div class="resizable-column" style="min-width:70px;" >Dibuat Oleh.</div></th>
+                                                <div class="resizable-column" style="min-width:70px;" >Diinput Oleh</div></th>
                                             <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-10 px-1">
-                                                <div class="resizable-column" style="min-width:70px;" >DiSunting Oleh</div></th>
+                                                <div class="resizable-column" style="min-width:70px;" >Dikirim Oleh</div></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -151,7 +147,6 @@
                     serverSide:true,
                     pagination: true,
                     responsive: true,
-                    'iDisplayLength': 10,
                     ajax: {
                         url: "{{route('historywasis.listdata')}}",
                         type: 'POST',
@@ -164,16 +159,17 @@
                         {data: 'aksi', name: 'aksi', orderable: false, searchable: true},
                         {data: 'tanggal_kirim_wasis', name: 'tanggal_kirim_wasis', orderable: false, searchable: true},
                         {data: 'status_wasis', name: 'status_wasis', orderable: false, searchable: false},
-                        {data: 'name', name: 'name', orderable: true, searchable: true},
+                        {data: 'nama', name: 'name', orderable: true, searchable: true},
                         {data: 'foto', name: 'foto', orderable: false, searchable: false},
                         {data: 'nik', name: 'nik', orderable: false, searchable: true},
-                        {data: 'city', name: 'city', orderable: false, searchable: true},
-                        {data: 'province', name: 'province', orderable: false, searchable: true},
-                        {data: 'nama_petugas', name: 'nama_petugas', orderable: false, searchable: true},
-                        {data: 'upt', name: 'upt', orderable: false, searchable: true},
+                        {data: 'kota_kabupaten', name: 'city', orderable: false, searchable: true},
+                        {data: 'provinsi', name: 'province', orderable: false, searchable: true},
                         {data: 'created_by', name: 'created_by', orderable: false, searchable: true,visible:true},
                         {data: 'updated_by', name: 'updated_by', orderable: false, searchable: true, visible:true}
-                    ]
+                    ],
+                    columnDefs: [
+                        { className: 'dt-center', targets: '_all' },
+                    ],
                 });
 
                 $(document).on("click", ".uploadFoto",function () {
@@ -188,10 +184,10 @@
                         },
                         cache : false,
                         success:function(res){
-                            $('#nameUser').val(res.data.name);
+                            $('#nameUser').val(res.data.nama);
                             $('#nikUser').val(res.data.nik);
-                            $('#LatKoordinator').val(res.data.lat);
-                            $('#LongKoordinator').val(res.data.longs);
+                            $('#LatKoordinator').val(res.data.latitude);
+                            $('#LongKoordinator').val(res.data.longitude);
                         }
                     })
                 });

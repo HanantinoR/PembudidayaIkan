@@ -50,7 +50,7 @@ class PresensiController extends Controller
             'foto_in' => $file,
             'location_in' => $lokasi,
             'created_at' => date('Y-m-d H:i:s'),
-            'created_by' => Auth::user()->nama_lengkap
+            'created_by' => Auth::user()->nama
         ]);
 
         return response()->json([

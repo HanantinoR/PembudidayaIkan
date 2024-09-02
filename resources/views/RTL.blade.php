@@ -309,7 +309,7 @@
                         </li>
                         <li class="nav-item ps-2 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0">
-                                <img src="{{asset(/assets/img/team-2.jpg)}}" class="avatar avatar-sm" alt="avatar" />
+                                {{-- <img src="{{asset(/assets/img/team-2.jpg)}}" class="avatar avatar-sm" alt="avatar" /> --}}
                             </a>
                         </li>
                     </ul>

@@ -97,7 +97,7 @@
                                                 </g>
                                             </svg>
                                         </span>
-                                        <span class="btn-inner--text">Ambil Foto</span>
+                                        <span class="btn-inner--text">Ambil Foto!</span>
                                     </button>
                                     <button type="button" class="btn btn-round bg-gradient-success btn-lg w-100 mt-4 mb-0 btnPresensi" id="btnPresensi">
                                         <span class="btn-inner--icon">
@@ -112,7 +112,7 @@
                                                 </g>
                                             </svg>
                                         </span>
-                                        <span class="btn-inner--text">Kirim Absensi</span>
+                                        <span class="btn-inner--text">Simpan Foto!</span>
                                     </button>
                                 </div>
                                 <div class="col">

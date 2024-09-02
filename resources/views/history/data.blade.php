@@ -9,8 +9,7 @@
                         <div class="card-header border-bottom pb-0">
                             <div class="d-sm-flex align-items-center mb-3">
                                 <div>
-                                    <h6 class="font-weight-semibold text-lg mb-0">TABLE HISTORY INPUT DATA</h6>
-                                    <p class="text-sm mb-sm-0 mb-2">These are details about the last transactions</p>
+                                    <h6 class="font-weight-semibold text-lg mb-0">Tabel History Input Data</h6>
                                 </div>
                                 <div class="ms-auto d-flex">
                                     <a href="{{route('historyinput.download')}}" class="btn btn-success  d-flex align-items-center mb-0 downloadbtn">
@@ -40,7 +39,7 @@
                                             <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-10 ps-2 px-1">
                                                 <div class="resizable-column" style="min-width:auto;">Aksi Wasis</div></th>
                                             <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-10 ps-2 px-1">
-                                                <div class="resizable-column" style="min-width:auto;">Aksi Foto</div></th>
+                                                <div class="resizable-column" style="min-width:auto;">Aksi</div></th>
                                             <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-10 ps-2 px-1">
                                                 <div class="resizable-column" style="min-width:auto;">Nama</div></th>
                                             <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-10 px-1">
@@ -55,6 +54,14 @@
                                                 <div class="resizable-column" style="min-width:200px;">Kabupaten / Kota </div></th>
                                             <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-7 px-1" >
                                                 <div class="resizable-column" style="min-width:200px;">Provinsi </div></th>
+                                            <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-7 px-1" >
+                                                <div class="resizable-column" style="min-width:200px;">Diinput Oleh </div></th>
+                                            <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-7 px-1" >
+                                                <div class="resizable-column" style="min-width:200px;">Diinput Tanggal </div></th>
+                                            <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-7 px-1" >
+                                                <div class="resizable-column" style="min-width:200px;">Diupdate Oleh </div></th>
+                                            <th class="text-uppercase text-center text-secondary text-xs font-weight-bold opacity-7 px-1" >
+                                                <div class="resizable-column" style="min-width:200px;">Diupdate Tanggal </div></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -75,7 +82,7 @@
                   <div class="card card-plain">
                     <div class="card-header pb-0 text-left">
                       <h3 class="font-weight-bolder text-dark">Upload Foto</h3>
-                      <p class="mb-0">Silahkan Upload foto User</p>
+                      <p class="mb-0">Silahkan Upload Lapangan Yang Jelas!</p>
                     </div>
                     <div class="card-body">
                       <form role="form text-left" id="formUploadFoto">
@@ -144,7 +151,6 @@
                     serverSide:true,
                     pagination: true,
                     responsive: true,
-                    'iDisplayLength': 10,
                     ajax: {
                         url: "{{route('historyinput.listdata')}}",
                         type: 'POST',
@@ -156,16 +162,21 @@
                         {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
                         {data: 'wasis', name: 'wasis', orderable: false, searchable: false},
                         {data: 'aksi', name: 'aksi', orderable: false, searchable: false},
-                        {data: 'name', name: 'name', orderable: true, searchable: true},
+                        {data: 'nama', name: 'nama', orderable: false, searchable: true},
                         {data: 'foto', name: 'foto', orderable: false, searchable: false},
                         {data: 'nik', name: 'nik', orderable: false, searchable: true},
-                        {data: 'village', name: 'village', orderable: false, searchable: true},
-                        {data: 'district', name: 'district', orderable: false, searchable: true},
-                        {data: 'city', name: 'city', orderable: false, searchable: true},
-                        {data: 'province', name: 'province', orderable: false, searchable: true},
-                        {data: 'created_by', name: 'created_by', orderable: false, searchable: true,visible:false},
-                        {data: 'updated_by', name: 'updated_by', orderable: false, searchable: true, visible:false}
-                    ]
+                        {data: 'kelurahan', name: 'kelurahan', orderable: false, searchable: true},
+                        {data: 'kecamatan', name: 'kecamatan', orderable: false, searchable: true},
+                        {data: 'kota_kabupaten', name: 'kota_kabupaten', orderable: false, searchable: true},
+                        {data: 'provinsi', name: 'provinsi', orderable: false, searchable: true},
+                        {data: 'created_by', name: 'created_by', orderable: false, searchable: true},
+                        {data: 'created_at', name: 'created_at', orderable: false, searchable: true},
+                        {data: 'updated_by', name: 'updated_by', orderable: false, searchable: true},
+                        {data: 'updated_at', name: 'updated_at', orderable: false, searchable: true}
+                    ],
+                    columnDefs: [
+                        { className: 'dt-center', targets: '_all' },
+                    ],
                 });
 
                 $(document).on("click", ".uploadFoto",function () {
@@ -180,10 +191,10 @@
                         },
                         cache : false,
                         success:function(res){
-                            $('#nameUser').val(res.data.name);
+                            $('#nameUser').val(res.data.nama);
                             $('#nikUser').val(res.data.nik);
-                            $('#LatKoordinator').val(res.data.lat);
-                            $('#LongKoordinator').val(res.data.longs);
+                            $('#LatKoordinator').val(res.data.latitude);
+                            $('#LongKoordinator').val(res.data.longitude);
                             $('.btnSubmitFoto').attr('data-id',dataID);
                         }
                     })
