@@ -27,9 +27,9 @@ class DashboardController extends Controller
     {
         $nama = Auth::user()->nama;
         if (Auth::user()->role == "Admin") {
-            $list_foto = DB::table('presensi')->orderBy('created_at','DESC')->get();
+            $list_foto = DB::table('presensi')->select('id','nama_user_input','nik_user_input','foto_in','location_in','created_at','created_by')->orderBy('created_at','DESC')->get();
         }else{
-            $list_foto = DB::table('presensi')->where('created_by','=',$nama)->orderBy('created_at','DESC')->get();
+            $list_foto = DB::table('presensi')->select('id','nama_user_input','nik_user_input','foto_in','location_in','created_at','created_by')->where('created_by','=',$nama)->orderBy('created_at','DESC')->get();
         }
         return DataTables::of($list_foto)
         ->addColumn('aksi', function($datatb){
@@ -42,15 +42,8 @@ class DashboardController extends Controller
             }
         })
         ->addColumn('foto', function($datatb){
-            if (DB::table('presensi')->where('nik_user_input','=',$datatb->nik_user_input)->value('foto_in') == null) {
-                return
-                '<a href="/history/upload/'.$datatb->id.'" class="btn btn-sm btn-primary" style="margin-top:5px;">
-                    <ion-icon name="camera-outline"></ion-icon> Upload Foto!
-                </a>';
-            }else{
-                return
-                '<img src="'.url(Storage::url("/uploads/absensi/".$datatb->foto_in)).'" alt="" class="imaged w64 " style="max-width:100px">';
-            }
+            return
+            '<img src="'.url(Storage::url("/uploads/absensi/".$datatb->foto_in)).'" alt="" class="imaged w64 " style="max-width:100px">';
         })
         ->rawColumns(['foto','aksi'])
         ->addIndexColumn()
