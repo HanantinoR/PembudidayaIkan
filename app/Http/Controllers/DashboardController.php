@@ -25,9 +25,9 @@ class DashboardController extends Controller
 
     function getDataDashboard()
     {
-        $nama = Auth::user()->name;
+        $nama = Auth::user()->nama;
         if (Auth::user()->role == "Admin") {
-            $list_foto = DB::table('presensi')->orderBy('created_at','DESC')->limit(20)->get();
+            $list_foto = DB::table('presensi')->orderBy('created_at','DESC')->get();
         }else{
             $list_foto = DB::table('presensi')->where('created_by','=',$nama)->orderBy('created_at','DESC')->get();
         }
