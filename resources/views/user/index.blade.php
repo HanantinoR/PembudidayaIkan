@@ -21,14 +21,11 @@
                             <div class="row">
                                 <div class="col-6">
                                     <h5 class="">User Management</h5>
-                                    <p class="mb-0 text-sm">
-                                        Here you can manage users.
-                                    </p>
                                 </div>
                                 <div class="col-6 text-end">
                                     <a href="{{route('management.add')}}" class="btn btn-dark btn-primary">
                                         <i class="fas fa-user-plus me-2"></i>
-                                        <span>Add Member</span>
+                                        <span>Tambah User</span>
                                     </a>
                                 </div>
                             </div>
@@ -57,7 +54,7 @@
                                             <th class="text-left text-uppercase font-weight-bold bg-transparent border-bottom text-secondary">
                                                 Nama</th>
                                             <th class="text-left text-uppercase font-weight-bold bg-transparent border-bottom text-secondary">
-                                                Email</th>
+                                                Username</th>
                                             <th class="text-center text-uppercase font-weight-bold bg-transparent border-bottom text-secondary">
                                                 Role</th>
                                             <th class="text-center text-uppercase font-weight-bold bg-transparent border-bottom text-secondary">
@@ -268,6 +265,9 @@
                             //     return row.created_at;
                             // }
                         },
+                    ],
+                    columnDefs: [
+                        { className: 'dt-center', targets: '_all' },
                     ],
         });
 

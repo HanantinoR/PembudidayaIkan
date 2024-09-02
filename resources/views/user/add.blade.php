@@ -67,12 +67,12 @@
                                         <div class="d-sm-flex">
                                             <div class="">
                                                 <button type="button" class="btn btn-danger btn-primary" id="cancelBtn">
-                                                    kembali
+                                                    Kembali
                                                 </button>
                                             </div>
                                             <div class="ms-auto d-flex">
                                                 <button type="button" class="btn btn-success btn-primary" id="saveBtn">
-                                                    save
+                                                    Save
                                                 </button>
                                             </div>
                                         </div>
