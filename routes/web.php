@@ -73,6 +73,8 @@ Route::group(['middleware'=> 'auth'],function(){
         Route::post('/management/save',[UserController::class,'saveMember'])->name('management.save');
 
     });
+
+    route::get('/download/file',[PembesaranController::class,'downloadFile']);
 });
 
 Route::get('/tables', function () {

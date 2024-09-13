@@ -16,6 +16,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpWord\Shared\Converter;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Http;
 
 class PembesaranController extends Controller
 {
@@ -445,5 +446,67 @@ class PembesaranController extends Controller
             }
         }
         return redirect()->route('pembesaran')->with('message','Terdapat beberapa NIK yang sudah ada dalam Database!');
+    }
+
+    public function downloadFile()
+    {
+
+        // $getFile = Http::get($url);
+
+        $ch = curl_init();
+        $url = "https://drive.google.com/uc?export=download&id=1w78snGjJ6PgC_aayElYZVnuqlBSM3gwL";
+        // $url = "https://drive.google.com/uc?export=download&id={$fileId}";
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        echo "HTTP Status Code: {$httpCode}\n";
+        // echo "Response Content:\n" . htmlentities($response) . "\n";
+
+        if ($httpCode  == 302) {
+            if (preg_match('/confirm=([0-9A-Za-z_]+)/', $response, $matches)) {
+                $confirm = $matches[1];
+
+                // Construct new URL with confirmation token
+                // $url = "https://drive.google.com/uc?export=download&confirm={$confirm}&id={$fileId}";
+                $url = "https://drive.google.com/uc?export=download&confirm={$confirm}&id=1QuMv4vmQE3wweitGYSvHKfoifMEOpwVP";
+
+
+                // Set the new URL in cURL
+                curl_setopt($ch, CURLOPT_URL, $url);
+
+                // Execute the second cURL request
+                $response = curl_exec($ch);
+            } else {
+                // Token not found, handle as an error
+                echo "Error: Confirmation token not found.";
+                curl_close($ch);
+                return;
+            }
+        } else if ($httpCode  == 200)  {
+            $destination = 'Downloads/5.png';
+            $dir = dirname($destination);
+                if (!is_dir($dir)) {
+                    echo "Directory does not exist. Creating directory...\n";
+                    mkdir($dir, 0777, true); // Create the directory and set permissions
+                } else {
+                    echo "Directory exists.\n";
+                }
+
+                // Direct download: Save the file directly
+                $result = file_put_contents($destination, $response);
+                if ($result === false) {
+                    echo "Failed to save the file.\n";
+                } else {
+                    echo "File saved successfully.\n";
+                }
+            file_put_contents($destination,$response);
+        }
     }
 }
