@@ -450,63 +450,89 @@ class PembesaranController extends Controller
 
     public function downloadFile()
     {
+        $tanggalnow = date("Y-m-d H:i:s");
+        echo "Sekarang Jam ".$tanggalnow."\n"."Memulai Download Per 100 Foto...";
+        echo("<br>");
+        $nomor = 0;
+        $array_data = array();
+        $array_data["asd"] = "https://drive.google.com/drive/folders/1ZH6SJMMQGuawBeegeE31SR2TwQ8Fcn5M";
+        $array_data["3525114608570002"] = "https://drive.google.com/file/d/1mpcuGpteq02-U4ys_Qp_b7dUfBltepBy/view?usp=sharing";
 
-        // $getFile = Http::get($url);
+        foreach ($array_data as $key => $value) {
+            $nomor++;
+            $data_pembudidaya = DB::table('survey')->where('nik','=',$key)->select('id','nama','nik','longitude','latitude','created_by')->first();
+            @$nama = $data_pembudidaya->nama;
 
-        $ch = curl_init();
-        $url = "https://drive.google.com/uc?export=download&id=1w78snGjJ6PgC_aayElYZVnuqlBSM3gwL";
-        // $url = "https://drive.google.com/uc?export=download&id={$fileId}";
+            @$folder_atau_file = explode("/",parse_url($value)['path'])[2];
 
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            if (@$folder_atau_file === "folders") {
+                echo("$nomor. Download Atas NIK $key, $nama Gagal, Download Foto Disekip \n\n");
+                echo("<br>");
+                continue;
+            }else{
+                $tikor = $data_pembudidaya->latitude.', '.$data_pembudidaya->longitude;
+                $id = explode("/",parse_url($value)['path'])[3];
 
-        $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                $ch = curl_init();
+                $url = "https://drive.usercontent.google.com/download?id=$id&export=download&authuser=0";
 
-        echo "HTTP Status Code: {$httpCode}\n";
-        // echo "Response Content:\n" . htmlentities($response) . "\n";
-
-        if ($httpCode  == 302) {
-            if (preg_match('/confirm=([0-9A-Za-z_]+)/', $response, $matches)) {
-                $confirm = $matches[1];
-
-                // Construct new URL with confirmation token
-                // $url = "https://drive.google.com/uc?export=download&confirm={$confirm}&id={$fileId}";
-                $url = "https://drive.google.com/uc?export=download&confirm={$confirm}&id=1QuMv4vmQE3wweitGYSvHKfoifMEOpwVP";
-
-
-                // Set the new URL in cURL
                 curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 
-                // Execute the second cURL request
                 $response = curl_exec($ch);
-            } else {
-                // Token not found, handle as an error
-                echo "Error: Confirmation token not found.";
-                curl_close($ch);
-                return;
-            }
-        } else if ($httpCode  == 200)  {
-            $destination = 'Downloads/5.png';
-            $dir = dirname($destination);
-                if (!is_dir($dir)) {
-                    echo "Directory does not exist. Creating directory...\n";
-                    mkdir($dir, 0777, true); // Create the directory and set permissions
-                } else {
-                    echo "Directory exists.\n";
-                }
+                $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-                // Direct download: Save the file directly
-                $result = file_put_contents($destination, $response);
-                if ($result === false) {
-                    echo "Failed to save the file.\n";
-                } else {
-                    echo "File saved successfully.\n";
+                if ($httpCode  == 200)  {
+
+                    $waktu = date("YmdHis");
+                    $nik = $data_pembudidaya->nik;
+                    $lokasi = $tikor;
+                    $path = "uploads/absensi/";
+                    $file = $waktu."_".$nik."_".$nama.".png";
+                    $fileName =$path.$file;
+
+
+                    // Direct download: Save the file directly
+                    $result = Storage::disk('public')->put($fileName,$response);
+                    if ($result === false) {
+                        echo("$nomor. Download Atas NIK $key, $nama Gagal, Download Foto Disekip \n\n");
+                        echo("<br>");
+                        continue;
+                    } else {
+                        echo("$nomor. Download Foto Atas NIK $key, $nama Berhasil \n\n");
+                        echo("<br>");
+                        $presensi = DB::table('presensi')->insert([
+                            'nama_user_input' => trim($nama),
+                            'nik_user_input' => trim($nik),
+                            'foto_in' => $file,
+                            'location_in' => $lokasi,
+                            'created_at' => date('Y-m-d H:i:s'),
+                            'created_by' => $data_pembudidaya->created_by
+                        ]);
+                    }
+                    curl_close($ch);
+                    continue;
+                    // exit;
+                }else{
+                    echo("$nomor. Download Atas NIK $key, $nama Gagal, Download Foto Disekip \n\n");
+                    echo("<br>");
+                    curl_close($ch);
+                    continue;
                 }
-            file_put_contents($destination,$response);
+            }
         }
+        $tanggalend = date('Y-m-d H:i:s');
+
+        // Itung Berapa Lama Waktu Berjalan
+        $tanggal_mulai = new DateTime($tanggalnow);
+        $tanggal_selesai = new DateTime($tanggalend);
+
+        $waktu_berjalan = $tanggal_selesai->diff($tanggal_mulai);
+
+        echo "Sinkronisasi Data Dimulai Dari ".$tanggalnow.", Sampai ".date('Y-m-d H:i:s')."(".$waktu_berjalan->h." Jam ".$waktu_berjalan->i." Menit ".$waktu_berjalan->s." Detik)\n";
+
     }
 }
