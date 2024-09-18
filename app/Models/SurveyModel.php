@@ -84,6 +84,8 @@ class SurveyModel extends Model
         'updated_at',
         'updated_by',
         'response_wasis',
-        'tanggal_kirim_wasis'
+        'tanggal_kirim_wasis',
+        'response_update_wasis',
+        'tanggal_update_wasis'
     ];
 }
