@@ -93,7 +93,7 @@ class UpdateJadiVerifiedWasis extends Command
             curl_close($curl);
 
             $jumlah_berhasil++;
-            echo "NIK " . $value->nik_user_input . "Berhasil di Update Menjadi Verified \n";
+            echo "NIK " . $value->nik_user_input . " Berhasil di Update Menjadi Verified \n";
         }
 
         $tanggalend = date('Y-m-d H:i:s');
