@@ -62,7 +62,7 @@ class UpdateJadiVerifiedWasis extends Command
                         ->whereNotNull('response_update_wasis')
                         ->value('response_update_wasis');
 
-            if ($ambil_id === null || count($ambil_id) === 0) {
+            if ($ambil_id === null) {
                 echo "NIK " . $value->nik_user_input . " Tidak Ditemukan, Data Disekip Update Status Jadi Verif \n";
                 $jumlah_gagal++;
                 continue;
