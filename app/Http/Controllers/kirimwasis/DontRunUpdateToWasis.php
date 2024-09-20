@@ -167,7 +167,7 @@ echo "Sekarang Jam ".$tanggalnow."\n"."Memulai Kirim Data Ke Wasis...\n\n";
 // Now do Them Actions maszeehhh
 
 // Query-in Ambil Datanya
-$query_ambil_data_survey_belom_dikirim = 'SELECT * FROM survey WHERE response_wasis IS NOT NULL';
+$query_ambil_data_survey_belom_dikirim = 'SELECT * FROM survey WHERE response_wasis IS NOT NULL AND tanggal_update_wasis IS NULL';
 
 // Cek Bener Gak Query Nya
 if ($hasil_cek_ambil_data_survey_belom_dikirim = mysqli_query($conn, $query_ambil_data_survey_belom_dikirim)) {
@@ -256,8 +256,11 @@ if ($hasil_cek_ambil_data_survey_belom_dikirim = mysqli_query($conn, $query_ambi
                                     // Cek Bener Gak Query Nya
                                     if ($hasil_cek_get_kabupaten_sumber_pakan = mysqli_query($conn, $query_get_kabupaten_sumber_pakan)) {
                                         // Kalo Bener, Coba Cek Data yang belom dikirim ada berapa
-                                        // Kalo Dia == 0
-                                        if ($hasil_cek_get_kabupaten_sumber_pakan->num_rows === 0) {
+                                        $berhasil_atau_engga_sumber_pakan = $hasil_cek_get_kabupaten_sumber_pakan->num_rows;
+                                        if($value['komoditas'] == "Kotoni" && $value["kota_kabupaten_sumber_pakan"] == ''){
+                                            $berhasil_atau_engga_sumber_pakan = 1;
+                                        }
+                                        if ($berhasil_atau_engga_sumber_pakan === 0) {
                                             // Balikin Response ke Nohup "Gagal Pengecekannya Cuyyy!"
                                             echo "Tanggal ".date('Y-m-d H:i:s').", NIK ".$value["nik"]." Salah Input Nama Kota / Kabupaten Sumber Pakan! (Data Diisi Oleh ".$value['created_by'].")\n";
                                             echo "Data Disekip Update Ke Wasis...\n\n";
@@ -267,7 +270,11 @@ if ($hasil_cek_ambil_data_survey_belom_dikirim = mysqli_query($conn, $query_ambi
                                             mysqli_free_result($hasil_cek_get_kabupaten_sumber_pakan);
                                             continue;
                                         }else{
-                                            $data_hasil_cek_get_kabupaten_sumber_pakan = mysqli_fetch_all($hasil_cek_get_kabupaten_sumber_pakan,MYSQLI_ASSOC);
+                                            if($value['komoditas'] == "Kotoni" && $value["kota_kabupaten_sumber_pakan"] == ''){
+                                                $data_hasil_cek_get_kabupaten_sumber_pakan[0]['id_kabupaten'] = '';
+                                            }else{
+                                                $data_hasil_cek_get_kabupaten_sumber_pakan = mysqli_fetch_all($hasil_cek_get_kabupaten_sumber_pakan,MYSQLI_ASSOC);
+                                            }
                                             // Query-in Ambil Datanya
                                             $query_get_kabupaten_distribusi =   'SELECT * FROM daerah_wasis WHERE nama_kabupaten = "'.strtoupper(trim($value["kota_kabupaten_distribusi"]))
                                                                                 .'" LIMIT 1;';
